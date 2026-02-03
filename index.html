@@ -318,6 +318,41 @@
             font-size: 16px;
         }
         
+        /* Специальный стиль для карточки "Стать другом" */
+        .feature-card.become-friend {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card.become-friend:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            transform: rotate(30deg);
+        }
+        
+        .feature-card.become-friend .feature-icon {
+            background-color: var(--white);
+        }
+        
+        .feature-card.become-friend h3 {
+            color: var(--text-dark);
+        }
+        
+        .feature-card.become-friend .btn {
+            margin-top: 15px;
+            background-color: var(--accent-color);
+            padding: 10px 25px;
+            font-size: 14px;
+        }
+        
         /* Services */
         .services {
             padding: 120px 0;
@@ -684,12 +719,14 @@
                     <p>Общение через Telegram обеспечивает конфиденциальность. Вы можете не называть свое имя и делиться только тем, чем хотите.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card become-friend">
                     <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Искренний интерес</h3>
-                    <p>Мне действительно интересны люди и их истории. Я не просто "оказываю услугу", а искренне вовлекаюсь в общение и хочу помочь.</p>
+                    <h3>Хотите стать другом на час?</h3>
+                    <p>Если вы чувствуете, что тоже можете быть тем, кто выслушает и поддержит, напишите мне. Мы обсудим возможность размещения вашей анкеты на домене друг-на-час.рф</p>
+                    <p>Вместе мы можем создать сообщество, где каждый найдет того, с кем будет комфортно общаться.</p>
+                    <a href="#contact" class="btn">Обсудить сотрудничество</a>
                 </div>
             </div>
         </div>
