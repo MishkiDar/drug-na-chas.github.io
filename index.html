@@ -1,32 +1,849 @@
 <!DOCTYPE html>
-<html  >
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103551567', 'ym');
-
-    ym(103551567, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/103551567" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-  
+<html lang="ru">
 <head>
-
-  
-  
-  <title>Главная</title>
-
-  
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Друг на час | Вера</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #9c77b8;
+            --primary-dark: #7c5a9c;
+            --secondary-color: #f7e9ff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --light-bg: #f9f5ff;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            z-index: 0;
+            border-radius: 0 0 0 100px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* About */
+        .about {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            color: var(--primary-dark);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+        
+        .about-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .stat-item {
+            background-color: var(--white);
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-item i {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            background-color: var(--secondary-color);
+        }
+        
+        .service-card i {
+            font-size: 42px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .pricing-plans {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .plan {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            flex: 1;
+            max-width: 350px;
+        }
+        
+        .plan:hover {
+            transform: translateY(-10px);
+        }
+        
+        .plan.featured {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+        
+        .plan.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .plan.featured h3,
+        .plan.featured .price,
+        .plan.featured p {
+            color: var(--white);
+        }
+        
+        .plan.featured .btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+        
+        .plan.featured .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .plan h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .price span {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .plan ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .plan ul li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .plan.featured ul li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-details i {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-right: 15px;
+            width: 30px;
+        }
+        
+        .payment-methods {
+            flex: 1;
+        }
+        
+        .payment-methods h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .payment-methods p {
+            margin-bottom: 30px;
+        }
+        
+        .payment-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .payment-icons i {
+            font-size: 36px;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            flex: 2;
+        }
+        
+        .footer-logo .logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            flex: 1;
+        }
+        
+        .footer-links h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content, .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .hero-text, .about-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .hero::before {
+                width: 100%;
+                height: 40%;
+                border-radius: 0 0 100px 100px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-plans {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .plan.featured {
+                transform: none;
+            }
+            
+            .plan.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                margin-top: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <p> друг на час </p>
-  
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Друг<span>НаЧас</span>.рф</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#pricing">Тарифы</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Вера - ваш друг на час</h1>
+                    <p>Иногда каждому из нас нужен человек, который просто выслушает, поймет и поддержит. Я готова стать таким другом для вас — на час или больше. Общение через Telegram, анонимно и комфортно.</p>
+                    <p>За полгода я помогла более 50 людям почувствовать себя услышанными и понятыми. Давайте познакомимся!</p>
+                    <a href="#contact" class="btn">Написать в Telegram</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Здесь могло бы быть фото Веры -->
+                    <div style="width: 100%; height: 400px; background-color: var(--secondary-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 24px; font-weight: 500;">
+                        <div style="text-align: center;">
+                            <i class="fas fa-smile" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <div>Вера</div>
+                            <div style="font-size: 18px; margin-top: 10px;">Ваш друг на час</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Немного о себе</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Привет! Меня зовут Вера. По образованию я психолог, но уже несколько лет работаю в IT-сфере как проектный менеджер. Моя жизнь насыщена встречами, дедлайнами и командировками, но всегда находилось время выслушать друзей и помочь им советом.</p>
+                    <p>Полгода назад я решила превратить это умение в полезную услугу. Теперь я помогаю людям, которым нужен собеседник — тем, кто чувствует себя одиноким в большом городе, переживает трудные времена или просто хочет обсудить свои мысли с понимающим человеком.</p>
+                    <p>В свободное время я увлекаюсь фотографией, путешествиями и настольными играми. Обожаю открывать новые места в Москве и делиться впечатлениями. Мой опыт и разнообразные интересы помогают находить общий язык с разными людьми.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <h3>50+</h3>
+                        <p>Довольных клиентов</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>6 мес.</h3>
+                        <p>Опыта работы</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-comments"></i>
+                        <h3>200+</h3>
+                        <p>Часов общения</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <h3>4.9</h3>
+                        <p>Средняя оценка</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Как я могу помочь</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-ear-listen"></i>
+                    <h3>Активное слушание</h3>
+                    <p>Иногда важно просто выговориться, быть услышанным без осуждения и советов. Я готова стать таким слушателем для вас.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Эмоциональная поддержка</h3>
+                    <p>Переживаете трудные времена? Вместе мы найдем ресурсы для преодоления сложной ситуации и увидим свет в конце туннеля.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Советы и идеи</h3>
+                    <p>Нужен взгляд со стороны на вашу ситуацию? Я помогу рассмотреть разные варианты и поделюсь своим опытом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Тарифы</h2>
+            <div class="pricing-plans">
+                <div class="plan">
+                    <h3>Пробный сеанс</h3>
+                    <div class="price">500<span>₽</span></div>
+                    <p>30 минут общения</p>
+                    <ul>
+                        <li>Знакомство и установление контакта</li>
+                        <li>Обсуждение вашего запроса</li>
+                        <li>Возможность понять, подхожу ли я вам</li>
+                    </ul>
+                    <a href="#contact" class="btn">Выбрать этот тариф</a>
+                </div>
+                <div class="plan featured">
+                    <h3>Стандартный сеанс</h3>
+                    <div class="price">1000<span>₽</span></div>
+                    <p>60 минут общения</p>
+                    <ul>
+                        <li>Глубокое обсуждение вашей ситуации</li>
+                        <li>Активное слушание и поддержка</li>
+                        <li>Конструктивный диалог и обратная связь</li>
+                        <li>Доступ к быстрым сообщениям в течение дня</li>
+                    </ul>
+                    <a href="#contact" class="btn">Выбрать этот тариф</a>
+                </div>
+                <div class="plan">
+                    <h3>Продолжительное общение</h3>
+                    <div class="price">1800<span>₽</span></div>
+                    <p>2 часа общения</p>
+                    <ul>
+                        <li>Для сложных или многоаспектных тем</li>
+                        <li>Неспешное, глубокое обсуждение</li>
+                        <li>Возможность перерыва по необходимости</li>
+                        <li>Подведение итогов и план действий</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Выбрать этот тариф</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь со мной</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Как проходит общение</h3>
+                    <p>Все общение происходит через Telegram для обеспечения конфиденциальности и удобства. Вы можете писать текстовые сообщения или использовать голосовые сообщения — как вам комфортнее.</p>
+                    <p>Я обычно отвечаю в течение 15-30 минут в рабочее время (с 10:00 до 22:00 по московскому времени).</p>
+                    
+                    <div class="contact-details">
+                        <div>
+                            <i class="fab fa-telegram"></i>
+                            <div>
+                                <strong>Telegram:</strong> @друг_на_час_вера
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Время работы:</strong> ежедневно с 10:00 до 22:00
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fas fa-comment"></i>
+                            <div>
+                                <strong>Формат:</strong> Текст/голосовые сообщения
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://t.me/друг_на_час_вера" class="btn" target="_blank">
+                        <i class="fab fa-telegram"></i> Написать в Telegram
+                    </a>
+                </div>
+                
+                <div class="payment-methods">
+                    <h3>Способы оплаты</h3>
+                    <p>Оплата происходит удобным для вас способом после сеанса. Вы можете отблагодарить меня любой суммой, соответствующей выбранному тарифу.</p>
+                    
+                    <div>
+                        <h4>Донаты через:</h4>
+                        <div class="payment-icons">
+                            <i class="fas fa-utensils" title="Яндекс Еда (чаевые)"></i>
+                            <i class="fas fa-hand-holding-heart" title="Донат-сервисы"></i>
+                            <i class="fab fa-yandex" title="ЮMoney"></i>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; background-color: var(--light-bg); padding: 25px; border-radius: 10px;">
+                        <h4>Как происходит оплата?</h4>
+                        <p>1. Вы выбираете продолжительность общения</p>
+                        <p>2. Мы общаемся в Telegram</p>
+                        <p>3. После сеанса я отправляю вам ссылку для чаевых в Яндекс Еде или другой удобный вам способ</p>
+                        <p>4. Вы переводите любую сумму (рекомендуемая: 500₽ за 30 мин, 1000₽ за 60 мин)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">Друг<span>НаЧас</span>.рф</div>
+                    <p>Проект Веры — вашего друга на час. Анонимное, комфортное общение, когда вам нужна поддержка или просто собеседник.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#pricing">Тарифы</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li>Telegram: @друг_на_час_вера</li>
+                        <li>Время: 10:00 - 22:00 (МСК)</li>
+                        <li>Почта: vera@друг-на-час.рф</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 ДругНаЧас.рф | Вера | Все права защищены. Это не психологическая помощь, а услуги дружеского общения.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Добавление класса активного элемента при прокрутке
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
