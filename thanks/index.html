@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103551567', 'ym');
+
+    ym(103551567, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103551567" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спасибо за оплату! | Вера | Друг на час</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f8d7e8;
+            --primary-dark: #e6b8d2;
+            --secondary-color: #f5f0f6;
+            --accent-color: #a18aa6;
+            --accent-light: #d6c6d9;
+            --text-dark: #5a4a5e;
+            --text-light: #8a7a8e;
+            --white: #ffffff;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--white) 100%);
+        }
+        
+        h1, h2, h3, .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+        
+        .thank-you-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .thank-you-container:before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .thank-you-container:after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 150px;
+            height: 150px;
+            background-color: var(--accent-light);
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .thank-you-icon {
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .thank-you-icon i {
+            font-size: 44px;
+            color: var(--accent-color);
+        }
+        
+        .thank-you-container h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .thank-you-container p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+        
+        .highlight-message {
+            background-color: var(--secondary-color);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .highlight-message p {
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 19px;
+            margin: 0;
+        }
+        
+        .contact-note {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-note p {
+            margin-bottom: 10px;
+        }
+        
+        .telegram-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 15px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 2px solid var(--accent-color);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .telegram-link:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(161, 138, 166, 0.2);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 35px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--text-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .divider-line {
+            height: 1px;
+            width: 60px;
+            background-color: var(--primary-dark);
+            margin: 0 15px;
+        }
+        
+        .divider i {
+            color: var(--primary-dark);
+            font-size: 18px;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 14px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+        
+        /* Анимация появления */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .thank-you-container {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 50px 30px;
+                margin: 0 15px;
+            }
+            
+            .thank-you-container h1 {
+                font-size: 34px;
+            }
+            
+            .thank-you-icon {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .thank-you-icon i {
+                font-size: 40px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .thank-you-container {
+                padding: 40px 25px;
+            }
+            
+            .thank-you-container h1 {
+                font-size: 30px;
+            }
+            
+            .thank-you-container p {
+                font-size: 16px;
+            }
+            
+            .highlight-message {
+                padding: 20px;
+            }
+            
+            .highlight-message p {
+                font-size: 17px;
+            }
+            
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-icon">
+            <i class="fas fa-heart"></i>
+        </div>
+        
+        <h1>Спасибо за оплату!</h1>
+        
+        <p>Я получила вашу оплату и очень благодарна за ваше доверие.</p>
+        
+        <div class="highlight-message">
+            <p>Я свяжусь с вами в Telegram в течение 24 часов, чтобы согласовать удобное для нас обоих время общения.</p>
+        </div>
+        
+        <p>Мы обсудим все детали и выберем время, которое будет комфортно для нас обоих.</p>
+        
+        <div class="contact-note">
+            <p><strong>Мой Telegram:</strong></p>
+            <a href="https://t.me/BepeRf" class="telegram-link" target="_blank">
+                <i class="fab fa-telegram"></i> @BepeRf
+            </a>
+            <p style="margin-top: 15px; font-size: 15px;">Если у вас есть вопросы или срочные пожелания по времени, напишите мне сами.</p>
+        </div>
+        
+        <div class="divider">
+            <div class="divider-line"></div>
+            <i class="fas fa-heart"></i>
+            <div class="divider-line"></div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="index.html" class="btn">На главную</a>
+            <a href="https://t.me/BepeRf" class="btn btn-outline" target="_blank">
+                <i class="fab fa-telegram"></i> Написать сейчас
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p><strong>Вера | Друг на час</strong></p>
+        <p>Искреннее общение без осуждения</p>
+        <div class="copyright">
+            <p>© 2023 | Общение через Telegram</p>
+            <p>Это не психологическая помощь, а услуги дружеского общения и поддержки.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная анимация элементов
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = [
+                '.thank-you-icon',
+                'h1',
+                '.thank-you-container p:nth-of-type(1)',
+                '.highlight-message',
+                '.thank-you-container p:nth-of-type(2)',
+                '.contact-note',
+                '.divider',
+                '.action-buttons',
+                'footer'
+            ];
+            
+            elements.forEach((selector, index) => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    setTimeout(() => {
+                        element.style.opacity = '0';
+                        element.style.transform = 'translateY(20px)';
+                        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        
+                        setTimeout(() => {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                        }, 50);
+                    }, index * 150);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
