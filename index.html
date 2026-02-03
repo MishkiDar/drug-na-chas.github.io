@@ -114,13 +114,14 @@
         
         /* Header */
         header {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
             padding: 30px 0;
             transition: var(--transition);
+            background-color: transparent;
         }
         
         .scrolled {
@@ -182,6 +183,8 @@
             color: var(--white);
             position: relative;
             text-align: center;
+            padding-top: 100px;
+            box-sizing: border-box;
         }
         
         .hero-content {
@@ -585,6 +588,10 @@
                 margin: 5px 15px;
             }
             
+            .hero {
+                padding-top: 150px;
+            }
+            
             .hero h1 {
                 font-size: 42px;
             }
@@ -614,6 +621,10 @@
         }
         
         @media (max-width: 480px) {
+            .hero {
+                padding-top: 160px;
+            }
+            
             .hero h1 {
                 font-size: 36px;
             }
@@ -776,7 +787,7 @@
         <div class="container">
             <h2>Вы заслуживаете быть услышанным</h2>
             <p>Не откладывайте разговор на потом. Иногда один искренний диалог может изменить perspective на ситуацию или просто сделать день легче.</p>
-            <p>Напишите мне, и мы договоримся о времени, удобном для вас. Общение через Telegram, оплата через сервис чаевые Яндекс.Еда. По полной предоплате.</p>
+            <p>Напишите мне, и мы договоримся о времени, удобном для вас. Общение через Telegram, оплата после разговора любым удобным способом.</p>
             <div style="margin-top: 50px;">
                 <a href="https://t.me/BepeRf" class="btn" target="_blank" style="font-size: 18px; padding: 16px 40px;">
                     <i class="fab fa-telegram"></i> Написать в Telegram
