@@ -281,22 +281,6 @@
             background: #F6F2EE;
         }
 
-        .bot-note-modern {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: #F6F2EE;
-            border-radius: 60px;
-            padding: 14px 25px;
-            font-size: 0.98rem;
-            border: 1px solid #DBC9B5;
-            width: 100%;
-        }
-        .bot-note-modern i {
-            color: #B17E4F;
-            font-size: 1.8rem;
-        }
-
         /* services */
         h2 {
             font-size: 2.8rem;
@@ -415,12 +399,19 @@
             letter-spacing: 5px;
             font-size: 1.2rem;
         }
-        .badge-orange {
-            background: #B17E4F;
+        .badge-quality {
+            background: #2C3A4B;
             color: white;
             padding: 6px 20px;
             border-radius: 40px;
             font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge-quality i {
+            color: #FFB347;
         }
 
         /* features */
@@ -500,8 +491,8 @@
                 <div class="quiz-option" data-value="leak"><i class="fas fa-water"></i> Протечка / течёт</div>
                 <div class="quiz-option" data-value="blockage"><i class="fas fa-poop"></i> Засорилось</div>
                 <div class="quiz-option" data-value="mixer"><i class="fas fa-shower"></i> Замена смесителя</div>
-                <div class="quiz-option" data-value="heater"><i class="fas fa-water-heater"></i> Бойлер</div>
-                <div class="quiz-option" data-value="washer"><i class="fas fa-washing-machine"></i> Подключить технику</div>
+                <div class="quiz-option" data-value="heater"><i class="fas fa-water heater"></i> Бойлер</div>
+                <div class="quiz-option" data-value="washer"><i class="fas fa-plug"></i> Подключить технику</div>
                 <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
             </div>
             
@@ -514,30 +505,24 @@
                     <a href="#" id="telegramLink" class="btn btn-primary" target="_blank"><i class="fab fa-telegram-plane"></i> Связаться быстро</a>
                     <button class="btn btn-outline" onclick="resetQuiz()"><i class="fas fa-undo-alt"></i> Заново</button>
                 </div>
-                <div style="width: 100%;">
-                    <div class="bot-note-modern">
-                        <i class="fab fa-telegram"></i>
-                        <span>Вся связь через @cantexniks_bot — код подставится автоматически, никаких звонков.</span>
-                    </div>
-                </div>
             </div>
             <p class="text-center" style="margin-top: 15px; color: #6F5E4E;" id="hintText"><i class="far fa-hand-pointer"></i> нажмите на проблему</p>
         </div>
 
-        <!-- Services -->
+        <!-- Services with neutral icons and "уточнить цену" buttons -->
         <h2>Что я делаю</h2>
         <div class="services-grid">
-            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
-            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
-            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
-            <div class="service-card"><i class="fas fa-water-heater"></i><div class="title">Водонагреватели</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
-            <div class="service-card"><i class="fas fa-washing-machine"></i><div class="title">Стиральные машины</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
-            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
-            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
-            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> цены</a></div>
+            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
         </div>
 
-        <!-- Master card -->
+        <!-- Master card with quality badge instead of discount -->
         <div class="master-card">
             <div class="master-photo"><i class="fas fa-user-tie"></i></div>
             <div class="master-info">
@@ -551,7 +536,7 @@
                 <div class="review-row" style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
                     <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
                     <span>300+ довольных соседей</span>
-                    <span class="badge-orange">скидка 10% на первую услугу</span>
+                    <span class="badge-quality"><i class="fas fa-medal"></i> Качество на 100%</span>
                 </div>
             </div>
         </div>
