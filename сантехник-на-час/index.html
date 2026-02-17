@@ -16,8 +16,6 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/103551567" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Сантехник в Москве Максим — быстро, чисто, по-соседски</title>
@@ -245,6 +243,10 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .service-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
         }
 
         .service-card i {
@@ -256,12 +258,23 @@
         .service-card .title {
             font-weight: 700;
             font-size: 1.1rem;
+            margin-bottom: 6px;
         }
 
         .service-card .price {
             color: #f59e0b;
             font-weight: 700;
             margin-top: 6px;
+            display: inline-block;
+            background: #fef9e7;
+            padding: 6px 15px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+        .service-card .price i {
+            font-size: 0.8rem;
+            color: #f59e0b;
+            margin-right: 4px;
         }
 
         /* Карточка мастера */
@@ -330,33 +343,6 @@
             margin-top: 50px;
         }
 
-        .phone-form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            max-width: 500px;
-            margin-top: 15px;
-        }
-
-        .phone-form input {
-            flex: 1;
-            padding: 16px 22px;
-            border-radius: 60px;
-            border: 2px solid #cbd5e1;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .phone-form input:focus {
-            border-color: #f59e0b;
-        }
-
-        .phone-form button {
-            background: #2a4f68;
-            color: white;
-            padding: 16px 30px;
-        }
-
         .hidden {
             display: none;
         }
@@ -364,6 +350,22 @@
         .mt-4 { margin-top: 30px; }
         .text-center { text-align: center; }
         .flex { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        
+        .bot-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #d9eaf5;
+            border-radius: 60px;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            color: #1b3b4f;
+            margin-bottom: 5px;
+        }
+        .bot-note i {
+            color: #2a4f68;
+            font-size: 1.4rem;
+        }
     </style>
 </head>
 <body>
@@ -388,7 +390,7 @@
             <div class="quiz-question">
                 👨‍🔧 Что случилось? Расскажите одной кнопкой — я пойму
             </div>
-            <!-- Простой выбор в сетке -->
+            <!-- Простой выбор в сетке (кнопка "Другое / не знаю" удалена) -->
             <div class="quiz-grid" id="quizOptions">
                 <div class="quiz-option" data-value="leak"><i class="fas fa-water"></i> Протечка / течёт</div>
                 <div class="quiz-option" data-value="blockage"><i class="fas fa-poop"></i> Засорилось</div>
@@ -396,7 +398,7 @@
                 <div class="quiz-option" data-value="heater"><i class="fas fa-water-heater"></i> Бойлер (водонагреватель)</div>
                 <div class="quiz-option" data-value="washer"><i class="fas fa-washing-machine"></i> Подключить технику</div>
                 <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
-                <div class="quiz-option" data-value="other"><i class="fas fa-tools"></i> Другое / не знаю</div>
+                <!-- опция other удалена -->
             </div>
             
             <!-- Блок результата (изначально скрыт) -->
@@ -406,15 +408,16 @@
                     <div class="result-code-box" id="generatedCode">4712</div>
                 </div>
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="#" id="telegramLink" class="btn btn-telegram" target="_blank"><i class="fab fa-telegram-plane"></i> AI-помощник с кодом</a>
+                    <!-- Кнопка переименована в "Связаться быстро", ссылка ведёт на бота -->
+                    <a href="#" id="telegramLink" class="btn btn-telegram" target="_blank"><i class="fab fa-telegram-plane"></i> Связаться быстро</a>
                     <button class="btn btn-outline-dark" onclick="resetQuiz()"><i class="fas fa-undo-alt"></i> Заново</button>
                 </div>
+                <!-- Блок с телефоном полностью удалён, вместо него добавлено пояснение про бота -->
                 <div style="width: 100%; margin-top: 15px;">
-                    <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt" style="color: #2a4f68;"></i> Или оставьте телефон — я сам позвоню:</p>
-                    <form id="phoneFormSimple" class="phone-form">
-                        <input type="tel" placeholder="+7 (999) 123-45-67" required>
-                        <button type="submit" class="btn">Заказать звонок</button>
-                    </form>
+                    <div class="bot-note">
+                        <i class="fab fa-telegram"></i>
+                        <span>Вся связь — через бота @cantexniks_bot. Нажмите «Связаться быстро» и ваш код подставится автоматически. Быстро и без звонков!</span>
+                    </div>
                 </div>
             </div>
 
@@ -422,27 +425,27 @@
             <p class="text-center" style="margin-top: 12px; color: #556b82;" id="hintText"><i class="far fa-hand-pointer"></i> Нажмите на проблему выше</p>
         </div>
 
-        <!-- Услуги с ценами (как в объявлении) -->
+        <!-- Услуги с ценами — все цены заменены на "Уточнить цены" со ссылкой на чат-бота -->
         <h2 style="font-size: 2rem; margin: 30px 0 15px;">Что я делаю</h2>
         <div class="services-grid">
-            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><div class="price">от 1500 ₽</div></div>
-            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><div class="price">от 2000 ₽</div></div>
-            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><div class="price">от 1800 ₽</div></div>
-            <div class="service-card"><i class="fas fa-water-heater"></i><div class="title">Установка водонагревателя</div><div class="price">от 3000 ₽</div></div>
-            <div class="service-card"><i class="fas fa-washing-machine"></i><div class="title">Подключение стиральных машин</div><div class="price">от 2500 ₽</div></div>
-            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Замена арматуры унитаза</div><div class="price">от 2000 ₽</div></div>
-            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Замена полотенцесушителя</div><div class="price">от 2500 ₽</div></div>
-            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Замена счетчиков воды</div><div class="price">от 1500 ₽</div></div>
+            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
+            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
+            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
+            <div class="service-card"><i class="fas fa-water-heater"></i><div class="title">Установка водонагревателя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
+            <div class="service-card"><i class="fas fa-washing-machine"></i><div class="title">Подключение стиральных машин</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Замена арматуры унитаза</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
+            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Замена полотенцесушителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
+            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Замена счетчиков воды</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> Уточнить цены</a></div>
         </div>
 
-        <!-- Блок о мастере (по-соседски, доверительно) -->
+        <!-- Блок о мастере (по-соседски, доверительно) — удалена указанная фраза -->
         <div class="master-card">
             <div class="master-photo">
                 <i class="fas fa-user-tie"></i>
             </div>
             <div class="master-info">
                 <h3>Максим, сантехник с 15-летним стажем</h3>
-                <p>Знаю, как неприятно, когда течёт кран посреди ночи. Поэтому работаю быстро, аккуратно и без лишней грязи. Цены фиксирую до начала работ — никаких сюрпризов. Не сливаю клиентов, закрываю 4+ заявок в день.</p>
+                <p>Знаю, как неприятно, когда течёт кран посреди ночи. Поэтому работаю быстро, аккуратно и без лишней грязи. Цены фиксирую до начала работ — никаких сюрпризов.</p>
                 <div class="master-stats">
                     <span class="stat"><i class="fas fa-check-circle" style="color:#16a34a;"></i> Гарантия 1 год</span>
                     <span class="stat"><i class="fas fa-images"></i> Фото «до/после»</span>
@@ -456,19 +459,19 @@
             </div>
         </div>
 
-        <!-- Дополнительный блок: почему стоит позвонить -->
+        <!-- Дополнительный блок: почему стоит позвонить (текст актуализирован под бота) -->
         <div style="display: flex; gap: 25px; flex-wrap: wrap; background: #e6f0f9; border-radius: 30px; padding: 30px; margin: 40px 0;">
-            <div style="flex:1; min-width: 200px;"><i class="fas fa-bolt" style="color:#f59e0b; font-size:2rem;"></i><h3>Срочно?</h3>Выезжаю за 30-60 минут, работаю без выходных.</div>
+            <div style="flex:1; min-width: 200px;"><i class="fas fa-bolt" style="color:#f59e0b; font-size:2rem;"></i><h3>Срочно?</h3>Выезжаю за 30-60 минут, работаю без выходных. Связь через бота для мгновенного ответа.</div>
             <div style="flex:1; min-width: 200px;"><i class="fas fa-shield-alt" style="color:#f59e0b; font-size:2rem;"></i><h3>Гарантия</h3>Даю гарантию 1 год на все работы — если что, приеду бесплатно.</div>
-            <div style="flex:1; min-width: 200px;"><i class="fas fa-hand-holding-heart" style="color:#f59e0b; font-size:2rem;"></i><h3>Честно</h3>Фиксирую цену перед ремонтом, не накручиваю.</div>
+            <div style="flex:1; min-width: 200px;"><i class="fas fa-hand-holding-heart" style="color:#f59e0b; font-size:2rem;"></i><h3>Честно</h3>Фиксирую цену перед ремонтом, не накручиваю. Уточнить стоимость легко в Telegram.</div>
         </div>
     </div>
 
     <!-- Подвал -->
     <div class="footer">
         <div class="container">
-            <p><i class="far fa-copyright"></i> Сантехник в Москве Максим, 2025 | Работаю с физлицами и юрлицами | <i class="fab fa-whatsapp"></i> +7 (999) 123-45-67</p>
-            <p style="margin-top: 10px;">* Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+            <p><i class="far fa-copyright"></i> Сантехник в Москве Максим, 2025 | Работаю с физлицами и юрлицами | <i class="fab fa-telegram"></i> @cantexniks_bot</p>
+            <p style="margin-top: 10px;">* Нажимая кнопки, вы соглашаетесь с политикой конфиденциальности</p>
         </div>
     </div>
 
@@ -497,7 +500,7 @@
                 let code = Math.abs(hash % 9000 + 1000); // четырёхзначный
                 codeSpan.innerText = code;
 
-                // Формируем ссылку на Telegram бота (замените на вашего)
+                // Формируем ссылку на Telegram бота (всегда с кодом)
                 telegramLink.href = `https://t.me/cantexniks_bot?start=${code}`;
 
                 // Показываем результат, скрываем подсказку
@@ -513,19 +516,6 @@
             resultDiv.classList.add('hidden');
             hintText.classList.remove('hidden');
         };
-
-        // Обработка формы телефона
-        document.getElementById('phoneFormSimple').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const phone = this.querySelector('input').value;
-            if (phone.length < 10) {
-                alert('Введите корректный номер телефона');
-                return;
-            }
-            // Здесь можно отправить данные через fetch/api
-            alert('Спасибо! Максим перезвонит вам в ближайшее время (номер: ' + phone + ')');
-            this.reset();
-        });
 
         // Небольшой бонус: если кликнуть на код - скопировать
         codeSpan.addEventListener('click', function() {
