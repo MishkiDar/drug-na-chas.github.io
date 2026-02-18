@@ -61,7 +61,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, .serif, .hello-badge, .quiz-question, .master-info h3, .result-code-box {
+        h1, h2, h3, h4, .serif, .hello-badge, .quiz-question, .master-info h3 {
             font-family: 'Literata', serif;
             font-weight: 600;
             letter-spacing: -0.02em;
@@ -73,15 +73,237 @@
             padding: 0 28px;
         }
 
-        /* -------------------- HERO WITH LOCAL BACKGROUND -------------------- */
+        /* -------------------- МОДАЛЬНОЕ ОКНО ВЫБОРА ГОРОДА -------------------- */
+        .city-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .city-modal.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .city-modal-content {
+            background: white;
+            border-radius: 48px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px 35px;
+            box-shadow: 0 50px 80px -30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: slideUp 0.4s ease;
+            scrollbar-width: thin;
+            scrollbar-color: #B17E4F #F6F2EE;
+        }
+
+        .city-modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .city-modal-content::-webkit-scrollbar-track {
+            background: #F6F2EE;
+            border-radius: 10px;
+        }
+
+        .city-modal-content::-webkit-scrollbar-thumb {
+            background: #B17E4F;
+            border-radius: 10px;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .city-modal h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #1F2A3A;
+            text-align: center;
+        }
+
+        .city-modal h2:after {
+            display: none;
+        }
+
+        .city-modal .utp-text {
+            text-align: center;
+            color: #6F5E4E;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background: #F6F2EE;
+            padding: 15px 20px;
+            border-radius: 60px;
+            border: 1px solid #DBC9B5;
+        }
+
+        .city-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .city-option {
+            background: #F6F2EE;
+            border: 2px solid #DBC9B5;
+            border-radius: 60px;
+            padding: 18px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #1F2A3A;
+        }
+
+        .city-option i {
+            color: #B17E4F;
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .city-option:hover {
+            background: #FFFFFF;
+            border-color: #B17E4F;
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px -15px rgba(0,0,0,0.3);
+        }
+
+        .city-option.moscow {
+            background: #2C3A4B;
+            color: white;
+            border-color: #B17E4F;
+        }
+
+        .city-option.moscow i {
+            color: #FFB347;
+        }
+
+        .city-option.moscow:hover {
+            background: #1F2A3A;
+        }
+
+        .city-option.spb {
+            background: #FFFFFF;
+            border-color: #B17E4F;
+        }
+
+        .city-option.spb i {
+            color: #B17E4F;
+        }
+
+        .other-cities-title {
+            text-align: center;
+            margin: 25px 0 15px;
+            font-size: 1.1rem;
+            color: #8A7A6A;
+            position: relative;
+        }
+
+        .other-cities-title:before,
+        .other-cities-title:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #DBC9B5;
+        }
+
+        .other-cities-title:before {
+            left: 0;
+        }
+
+        .other-cities-title:after {
+            right: 0;
+        }
+
+        .other-cities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .city-option-small {
+            background: #F6F2EE;
+            border: 1px solid #DBC9B5;
+            border-radius: 40px;
+            padding: 12px 10px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .city-option-small i {
+            color: #B17E4F;
+            font-size: 0.9rem;
+            min-width: 16px;
+        }
+
+        .city-option-small:hover {
+            background: #FFFFFF;
+            border-color: #B17E4F;
+            transform: translateY(-2px);
+        }
+
+        .remember-choice {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            color: #6F5E4E;
+            font-size: 0.95rem;
+        }
+
+        .remember-choice input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #B17E4F;
+            cursor: pointer;
+        }
+
+        /* -------------------- HERO -------------------- */
         .hero {
             position: relative;
             min-height: 85vh;
             display: flex;
             align-items: center;
             color: white;
-            background-color: #2C3A4B; /* fallback */
-            /* Используем локальный файл img.jpg из той же папки */
+            background-color: #2C3A4B;
             background-image: url('img.jpg');
             background-size: cover;
             background-position: center 30%;
@@ -89,7 +311,6 @@
             isolation: isolate;
         }
 
-        /* более мягкий градиент для лучшей читаемости */
         .hero::before {
             content: '';
             position: absolute;
@@ -117,7 +338,10 @@
             border: 1px solid rgba(255, 215, 140, 0.3);
             border-radius: 60px;
             padding: 10px 26px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
             font-size: 1.1rem;
             margin-bottom: 30px;
             color: #FFE7C2;
@@ -217,33 +441,9 @@
             box-shadow: 0 8px 18px -12px #1F2A3A;
         }
 
-        .result-preview-modern {
-            background: #FFFFFF;
-            border-radius: 40px;
-            padding: 28px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            border: 1px solid #EADDCB;
-            box-shadow: 0 15px 25px -20px rgba(0,0,0,0.2);
-        }
-
-        .result-code-box {
-            background: #F6F2EE;
-            border-radius: 60px;
-            padding: 12px 36px;
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: 5px;
-            color: #2C3A4B;
-            border: 1px solid #DBC9B5;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .result-code-box:hover {
-            background: #ECE4DB;
+        .quiz-action {
+            text-align: center;
+            margin-top: 20px;
         }
 
         .btn {
@@ -342,6 +542,7 @@
             text-decoration: none;
             border: 1px solid #DBC9B5;
             transition: 0.2s;
+            cursor: pointer;
         }
         .service-card .price i {
             font-size: 0.9rem;
@@ -441,6 +642,62 @@
             font-family: 'Literata', serif;
         }
 
+        /* form styles */
+        .services-form-container {
+            background: #FFFFFF;
+            border-radius: 40px;
+            padding: 28px 32px;
+            border: 1px solid #EADDCB;
+            box-shadow: 0 15px 25px -20px rgba(0,0,0,0.2);
+            margin: 30px 0 50px;
+        }
+
+        #sltop__form_placeholder_services form {
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+        }
+
+        #sltop__form_placeholder_services input,
+        #sltop__form_placeholder_services textarea,
+        #sltop__form_placeholder_services select {
+            background: #F6F2EE;
+            border: 1px solid #DBC9B5;
+            border-radius: 30px;
+            padding: 14px 22px;
+            font-family: 'Manrope', sans-serif;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #sltop__form_placeholder_services button {
+            background: #2C3A4B;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 34px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            width: 100% !important;
+            max-width: 100% !important;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+            margin-top: 8px;
+        }
+
+        #sltop__form_placeholder_services button:hover {
+            background: #1F2A3A;
+            transform: translateY(-2px);
+        }
+
         /* footer */
         .footer {
             text-align: center;
@@ -451,150 +708,498 @@
             background: #FFFFFF;
         }
 
-        .hidden { display: none; }
+        .hidden { 
+            display: none !important; 
+        }
+        
+        .city-badge {
+            background: #2C3A4B;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .change-city-btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+
         .text-center { text-align: center; }
 
-        @media (max-width: 700px) {
+        /* -------------------- МЕДИА ЗАПРОСЫ ДЛЯ МОБИЛЬНЫХ -------------------- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
             .hero { min-height: 70vh; }
-            .quiz-card { padding: 30px 25px; }
-            .quiz-card .quiz-question { font-size: 1.8rem; }
-            h2 { font-size: 2.2rem; }
-            .result-preview-modern { flex-direction: column; align-items: flex-start; }
+            
+            .quiz-card { 
+                padding: 30px 20px; 
+            }
+            
+            .quiz-card .quiz-question { 
+                font-size: 1.8rem; 
+            }
+            
+            h2 { 
+                font-size: 2.2rem; 
+            }
+            
+            .city-modal-content {
+                padding: 30px 20px;
+                max-height: 85vh;
+            }
+            
+            .other-cities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            
+            .city-option-small {
+                padding: 10px 8px;
+                font-size: 0.85rem;
+                white-space: normal;
+                word-break: keep-all;
+            }
+            
+            .city-option {
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .master-card {
+                padding: 35px 25px;
+                border-radius: 36px;
+            }
+            
+            .master-photo {
+                width: 130px;
+                height: 130px;
+                font-size: 4.5rem;
+            }
+            
+            .master-info h3 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                gap: 16px;
+            }
+            
+            .service-card {
+                padding: 25px 15px;
+            }
+            
+            .features-grid {
+                padding: 35px 25px;
+                border-radius: 36px;
+            }
+            
+            .feature-item h3 {
+                font-size: 1.6rem;
+            }
+            
+            .city-modal .utp-text {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+            
+            .quiz-card {
+                padding: 25px 16px;
+            }
+            
+            .other-cities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .city-option-small {
+                padding: 8px 6px;
+                font-size: 0.8rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2.2rem, 7vw, 3.5rem);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero with local img.jpg background -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hello-badge">
-                    <i class="fas fa-wrench"></i> Максим, ваш сосед-сантехник
-                </div>
-                <h1>Честный ремонт, быстрый выезд и никакой грязи</h1>
-                <div class="hero-stats">
-                    <span><i class="fas fa-clock"></i> 30–60 минут</span>
-                    <span><i class="fas fa-certificate"></i> Гарантия до 5 лет</span>
-                    <span><i class="fas fa-star"></i> Стаж 15 лет</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container quiz-section">
-        <!-- Glassmorphism quiz card -->
-        <div class="quiz-card" id="quizBlock">
-            <div class="quiz-question">
-                👨‍🔧 Что стряслось? Выберите — остальное я беру на себя
-            </div>
-            <div class="quiz-grid" id="quizOptions">
-                <div class="quiz-option" data-value="leak"><i class="fas fa-water"></i> Протечка / течёт</div>
-                <div class="quiz-option" data-value="blockage"><i class="fas fa-poop"></i> Засорилось</div>
-                <div class="quiz-option" data-value="mixer"><i class="fas fa-shower"></i> Замена смесителя</div>
-                <div class="quiz-option" data-value="heater"><i class="fas fa-water heater"></i> Бойлер</div>
-                <div class="quiz-option" data-value="washer"><i class="fas fa-plug"></i> Подключить технику</div>
-                <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
+    <!-- МОДАЛЬНОЕ ОКНО ВЫБОРА ГОРОДА -->
+    <div id="cityModal" class="city-modal">
+        <div class="city-modal-content">
+            <h2>Выберите ваш город</h2>
+            <div class="utp-text">
+                <i class="fas fa-bolt"></i> Подберем личного сантехника за 30 минут, чтобы решить проблему с первого раза
             </div>
             
-            <div id="resultPreview" class="result-preview-modern hidden">
-                <div>
-                    <div style="font-size: 1rem; color: #4A3F35;">персональный код:</div>
-                    <div class="result-code-box" id="generatedCode">4712</div>
+            <div class="city-list">
+                <!-- Москва -->
+                <div class="city-option moscow" onclick="selectCity('moscow')">
+                    <i class="fas fa-star"></i>
+                    Москва
                 </div>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="#" id="telegramLink" class="btn btn-primary" target="_blank"><i class="fab fa-telegram-plane"></i> Связаться быстро</a>
-                    <button class="btn btn-outline" onclick="resetQuiz()"><i class="fas fa-undo-alt"></i> Заново</button>
-                </div>
-            </div>
-            <p class="text-center" style="margin-top: 15px; color: #6F5E4E;" id="hintText"><i class="far fa-hand-pointer"></i> нажмите на проблему</p>
-        </div>
-
-        <!-- Services with neutral icons and "уточнить цену" buttons -->
-        <h2>Что я делаю</h2>
-        <div class="services-grid">
-            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-        </div>
-
-        <!-- Master card with quality badge instead of discount -->
-        <div class="master-card">
-            <div class="master-photo"><i class="fas fa-user-tie"></i></div>
-            <div class="master-info">
-                <h3>Максим, сантехник с 15-летним стажем</h3>
-                <p>Знаю, как неприятно, когда течёт кран посреди ночи. Поэтому работаю быстро, аккуратно и без грязи. Цены фиксирую до начала работ.</p>
-                <div class="master-stats">
-                    <span class="stat"><i class="fas fa-check-circle" style="color:#B17E4F;"></i> Гарантия 1 год</span>
-                    <span class="stat"><i class="fas fa-images"></i> Фото до/после</span>
-                    <span class="stat"><i class="fas fa-map-marker-alt"></i> Быстрый выезд</span>
-                </div>
-                <div class="review-row" style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
-                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    <span>300+ довольных соседей</span>
-                    <span class="badge-quality"><i class="fas fa-medal"></i> Качество на 100%</span>
+                
+                <!-- Санкт-Петербург -->
+                <div class="city-option spb" onclick="selectCity('spb')">
+                    <i class="fas fa-palace"></i>
+                    Санкт-Петербург
                 </div>
             </div>
-        </div>
-
-        <!-- Features -->
-        <div class="features-grid">
-            <div class="feature-item"><i class="fas fa-bolt"></i><h3>Срочно?</h3><p>Выезжаю за 30-60 минут без выходных.</p></div>
-            <div class="feature-item"><i class="fas fa-shield-alt"></i><h3>Гарантия</h3><p>1 год на все работы — приеду бесплатно.</p></div>
-            <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h3>Честно</h3><p>Цена фиксируется до ремонта, без сюрпризов.</p></div>
+            
+            <div class="other-cities-title">Другие города</div>
+            
+            <div class="other-cities-grid">
+                <!-- Список городов (в алфавитном порядке) -->
+                <div class="city-option-small" onclick="selectCity('other', 'Архангельск')"><i class="fas fa-city"></i> Архангельск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Астрахань')"><i class="fas fa-city"></i> Астрахань</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Белгород')"><i class="fas fa-city"></i> Белгород</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Брянск')"><i class="fas fa-city"></i> Брянск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Владимир')"><i class="fas fa-city"></i> Владимир</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Волгоград')"><i class="fas fa-city"></i> Волгоград</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Вологда')"><i class="fas fa-city"></i> Вологда</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Воронеж')"><i class="fas fa-city"></i> Воронеж</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Екатеринбург')"><i class="fas fa-city"></i> Екатеринбург</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Иваново')"><i class="fas fa-city"></i> Иваново</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Казань')"><i class="fas fa-city"></i> Казань</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Калининград')"><i class="fas fa-city"></i> Калининград</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Калуга')"><i class="fas fa-city"></i> Калуга</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Кемерово')"><i class="fas fa-city"></i> Кемерово</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Киров')"><i class="fas fa-city"></i> Киров</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Кострома')"><i class="fas fa-city"></i> Кострома</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Краснодар')"><i class="fas fa-city"></i> Краснодар</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Красноярск')"><i class="fas fa-city"></i> Красноярск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Липецк')"><i class="fas fa-city"></i> Липецк</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Магнитогорск')"><i class="fas fa-city"></i> Магнитогорск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Мурманск')"><i class="fas fa-city"></i> Мурманск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Набережные Челны')"><i class="fas fa-city"></i> Наб. Челны</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Нижний Новгород')"><i class="fas fa-city"></i> Нижний Новгород</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Нижний Тагил')"><i class="fas fa-city"></i> Нижний Тагил</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Новороссийск')"><i class="fas fa-city"></i> Новороссийск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Новосибирск')"><i class="fas fa-city"></i> Новосибирск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Омск')"><i class="fas fa-city"></i> Омск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Орел')"><i class="fas fa-city"></i> Орел</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Оренбург')"><i class="fas fa-city"></i> Оренбург</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Пермь')"><i class="fas fa-city"></i> Пермь</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Петрозаводск')"><i class="fas fa-city"></i> Петрозаводск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Ростов-на-Дону')"><i class="fas fa-city"></i> Ростов-на-Дону</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Рязань')"><i class="fas fa-city"></i> Рязань</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Самара')"><i class="fas fa-city"></i> Самара</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Саранск')"><i class="fas fa-city"></i> Саранск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Саратов')"><i class="fas fa-city"></i> Саратов</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Севастополь')"><i class="fas fa-city"></i> Севастополь</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Симферополь')"><i class="fas fa-city"></i> Симферополь</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Смоленск')"><i class="fas fa-city"></i> Смоленск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Сочи')"><i class="fas fa-city"></i> Сочи</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Ставрополь')"><i class="fas fa-city"></i> Ставрополь</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Сургут')"><i class="fas fa-city"></i> Сургут</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Таганрог')"><i class="fas fa-city"></i> Таганрог</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Тамбов')"><i class="fas fa-city"></i> Тамбов</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Тверь')"><i class="fas fa-city"></i> Тверь</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Тольятти')"><i class="fas fa-city"></i> Тольятти</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Томск')"><i class="fas fa-city"></i> Томск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Тула')"><i class="fas fa-city"></i> Тула</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Тюмень')"><i class="fas fa-city"></i> Тюмень</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Ульяновск')"><i class="fas fa-city"></i> Ульяновск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Уфа')"><i class="fas fa-city"></i> Уфа</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Чебоксары')"><i class="fas fa-city"></i> Чебоксары</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Челябинск')"><i class="fas fa-city"></i> Челябинск</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Череповец')"><i class="fas fa-city"></i> Череповец</div>
+                <div class="city-option-small" onclick="selectCity('other', 'Ярославль')"><i class="fas fa-city"></i> Ярославль</div>
+            </div>
+            
+            <div class="remember-choice">
+                <input type="checkbox" id="rememberCity">
+                <label for="rememberCity">Запомнить мой город</label>
+            </div>
         </div>
     </div>
 
+    <!-- КОНТЕЙНЕР ДЛЯ МОСКВЫ -->
+    <div id="moscowContent" class="hidden">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hello-badge">
+                        <i class="fas fa-wrench"></i> Максим, ваш сосед-сантехник
+                        <span class="city-badge"><i class="fas fa-map-marker-alt"></i> Москва</span>
+                    </div>
+                    <h1>Честный ремонт, быстрый выезд и никакой грязи</h1>
+                    <div class="hero-stats">
+                        <span><i class="fas fa-clock"></i> 30–60 минут</span>
+                        <span><i class="fas fa-certificate"></i> Гарантия до 5 лет</span>
+                        <span><i class="fas fa-star"></i> Стаж 15 лет</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container quiz-section">
+            <!-- Quiz card (без кода, только кнопка) -->
+            <div class="quiz-card">
+                <div class="quiz-question">
+                    👨‍🔧 Что стряслось? Выберите — остальное я беру на себя
+                </div>
+                <div class="quiz-grid">
+                    <div class="quiz-option"><i class="fas fa-water"></i> Протечка / течёт</div>
+                    <div class="quiz-option"><i class="fas fa-poop"></i> Засорилось</div>
+                    <div class="quiz-option"><i class="fas fa-shower"></i> Замена смесителя</div>
+                    <div class="quiz-option"><i class="fas fa-water heater"></i> Бойлер</div>
+                    <div class="quiz-option"><i class="fas fa-plug"></i> Подключить технику</div>
+                    <div class="quiz-option"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
+                </div>
+                
+                <div class="quiz-action">
+                    <a href="https://друг-на-час.рф/ассистент/" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-telegram-plane"></i> Связаться быстро
+                    </a>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <h2>Что я делаю</h2>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+                <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+                <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+                <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+                <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+                <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+                <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+                <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><a href="https://друг-на-час.рф/ассистент/" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            </div>
+
+            <!-- Master card -->
+            <div class="master-card">
+                <div class="master-photo"><i class="fas fa-user-tie"></i></div>
+                <div class="master-info">
+                    <h3>Максим, сантехник с 15-летним стажем</h3>
+                    <p>Знаю, как неприятно, когда течёт кран посреди ночи. Поэтому работаю быстро, аккуратно и без грязи. Цены фиксирую до начала работ.</p>
+                    <div class="master-stats">
+                        <span class="stat"><i class="fas fa-check-circle" style="color:#B17E4F;"></i> Гарантия 1 год</span>
+                        <span class="stat"><i class="fas fa-images"></i> Фото до/после</span>
+                        <span class="stat"><i class="fas fa-map-marker-alt"></i> Быстрый выезд</span>
+                    </div>
+                    <div class="review-row" style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span>300+ довольных соседей</span>
+                        <span class="badge-quality"><i class="fas fa-medal"></i> Качество на 100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features-grid">
+                <div class="feature-item"><i class="fas fa-bolt"></i><h3>Срочно?</h3><p>Выезжаю за 30-60 минут без выходных.</p></div>
+                <div class="feature-item"><i class="fas fa-shield-alt"></i><h3>Гарантия</h3><p>1 год на все работы — приеду бесплатно.</p></div>
+                <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h3>Честно</h3><p>Цена фиксируется до ремонта, без сюрпризов.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- КОНТЕЙНЕР ДЛЯ ВСЕХ ОСТАЛЬНЫХ ГОРОДОВ -->
+    <div id="otherContent" class="hidden">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hello-badge">
+                        <i class="fas fa-wrench"></i> Максим, ваш сосед-сантехник
+                        <span class="city-badge" id="otherCityBadge"><i class="fas fa-map-marker-alt"></i> <span id="selectedCityName">Ваш город</span></span>
+                    </div>
+                    <h1>Честный ремонт, быстрый выезд и никакой грязи</h1>
+                    <div class="hero-stats">
+                        <span><i class="fas fa-clock"></i> 30–60 минут</span>
+                        <span><i class="fas fa-certificate"></i> Гарантия до 5 лет</span>
+                        <span><i class="fas fa-star"></i> Стаж 15 лет</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container quiz-section">
+            <!-- Quiz card (без кода, вызывает форму) -->
+            <div class="quiz-card">
+                <div class="quiz-question">
+                    👨‍🔧 Что стряслось? Выберите — остальное я беру на себя
+                </div>
+                <div class="quiz-grid">
+                    <div class="quiz-option" onclick="showServicesForm('leak')"><i class="fas fa-water"></i> Протечка / течёт</div>
+                    <div class="quiz-option" onclick="showServicesForm('blockage')"><i class="fas fa-poop"></i> Засорилось</div>
+                    <div class="quiz-option" onclick="showServicesForm('mixer')"><i class="fas fa-shower"></i> Замена смесителя</div>
+                    <div class="quiz-option" onclick="showServicesForm('heater')"><i class="fas fa-water heater"></i> Бойлер</div>
+                    <div class="quiz-option" onclick="showServicesForm('washer')"><i class="fas fa-plug"></i> Подключить технику</div>
+                    <div class="quiz-option" onclick="showServicesForm('toilet')"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <h2>Что я делаю</h2>
+            <div class="services-grid">
+                <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><span class="price" onclick="showServicesForm('mixer')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+                <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><span class="price" onclick="showServicesForm('blockage')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+                <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><span class="price" onclick="showServicesForm('leak')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+                <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><span class="price" onclick="showServicesForm('heater')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+                <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><span class="price" onclick="showServicesForm('washer')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+                <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><span class="price" onclick="showServicesForm('toilet')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+                <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><span class="price" onclick="showServicesForm('towel')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+                <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><span class="price" onclick="showServicesForm('meter')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            </div>
+
+            <!-- Контейнер для формы -->
+            <div id="servicesFormContainer" class="services-form-container hidden">
+                <div id="sltop__form_placeholder_services"></div>
+            </div>
+
+            <!-- Master card -->
+            <div class="master-card">
+                <div class="master-photo"><i class="fas fa-user-tie"></i></div>
+                <div class="master-info">
+                    <h3>Максим, сантехник с 15-летним стажем</h3>
+                    <p>Знаю, как неприятно, когда течёт кран посреди ночи. Поэтому работаю быстро, аккуратно и без грязи. Цены фиксирую до начала работ.</p>
+                    <div class="master-stats">
+                        <span class="stat"><i class="fas fa-check-circle" style="color:#B17E4F;"></i> Гарантия 1 год</span>
+                        <span class="stat"><i class="fas fa-images"></i> Фото до/после</span>
+                        <span class="stat"><i class="fas fa-map-marker-alt"></i> Быстрый выезд</span>
+                    </div>
+                    <div class="review-row" style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        <span>300+ довольных соседей</span>
+                        <span class="badge-quality"><i class="fas fa-medal"></i> Качество на 100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features-grid">
+                <div class="feature-item"><i class="fas fa-bolt"></i><h3>Срочно?</h3><p>Выезжаю за 30-60 минут без выходных.</p></div>
+                <div class="feature-item"><i class="fas fa-shield-alt"></i><h3>Гарантия</h3><p>1 год на все работы — приеду бесплатно.</p></div>
+                <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h3>Честно</h3><p>Цена фиксируется до ремонта, без сюрпризов.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <div class="footer">
         <div class="container">
-            <p><i class="far fa-copyright"></i> Сантехник в вашем городе, 2026 | @cantexniks_bot</p>
+            <p><i class="far fa-copyright"></i> Сантехник в вашем городе, 2026 | <a href="https://друг-на-час.рф/ассистент/" target="_blank">@cantexniks_bot</a></p>
+            <div class="change-city-btn">
+                <button onclick="changeCity()" class="btn btn-outline">
+                    <i class="fas fa-map-marker-alt"></i> Сменить город
+                </button>
+            </div>
             <p style="margin-top: 12px; font-size: 0.9rem;">* Нажимая кнопки, вы соглашаетесь с политикой конфиденциальности</p>
         </div>
     </div>
 
     <script>
-        const options = document.querySelectorAll('.quiz-grid .quiz-option');
-        const resultDiv = document.getElementById('resultPreview');
-        const hintText = document.getElementById('hintText');
-        const codeSpan = document.getElementById('generatedCode');
-        const telegramLink = document.getElementById('telegramLink');
-        let selectedValue = null;
+        let selectedCityName = '';
 
-        options.forEach(opt => {
-            opt.addEventListener('click', function() {
-                options.forEach(o => o.classList.remove('selected'));
-                this.classList.add('selected');
-                selectedValue = this.getAttribute('data-value');
+        // Функция выбора города
+        function selectCity(cityType, cityDisplayName = '') {
+            const modal = document.getElementById('cityModal');
+            const remember = document.getElementById('rememberCity').checked;
+            
+            if (cityType === 'spb') {
+                cityDisplayName = 'Санкт-Петербург';
+            } else if (cityType === 'moscow') {
+                cityDisplayName = 'Москва';
+            }
+            
+            selectedCityName = cityDisplayName;
+            
+            if (remember) {
+                localStorage.setItem('selectedCity', cityType);
+                localStorage.setItem('selectedCityName', cityDisplayName);
+                localStorage.setItem('cityRemembered', 'true');
+            }
+            
+            // Показываем соответствующий контент
+            if (cityType === 'moscow') {
+                document.getElementById('moscowContent').classList.remove('hidden');
+                document.getElementById('otherContent').classList.add('hidden');
+            } else {
+                document.getElementById('otherContent').classList.remove('hidden');
+                document.getElementById('moscowContent').classList.add('hidden');
                 
-                let hash = 0;
-                for (let i = 0; i < selectedValue.length; i++) {
-                    hash = ((hash << 5) - hash) + selectedValue.charCodeAt(i);
-                    hash |= 0;
+                // Обновляем название города в бейдже
+                const cityNameSpan = document.getElementById('selectedCityName');
+                if (cityNameSpan) {
+                    cityNameSpan.textContent = cityDisplayName;
                 }
-                let code = Math.abs(hash % 9000 + 1000);
-                codeSpan.innerText = code;
-                telegramLink.href = `https://t.me/cantexniks_bot?start=${code}`;
-                resultDiv.classList.remove('hidden');
-                hintText.classList.add('hidden');
-            });
+            }
+            
+            modal.classList.add('hidden');
+        }
+
+        // Проверяем сохраненный выбор при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const remembered = localStorage.getItem('cityRemembered');
+            const savedCity = localStorage.getItem('selectedCity');
+            const savedCityName = localStorage.getItem('selectedCityName');
+            
+            if (remembered === 'true' && savedCity) {
+                if (savedCity === 'moscow') {
+                    document.getElementById('moscowContent').classList.remove('hidden');
+                    document.getElementById('otherContent').classList.add('hidden');
+                } else {
+                    document.getElementById('otherContent').classList.remove('hidden');
+                    document.getElementById('moscowContent').classList.add('hidden');
+                    
+                    const cityNameSpan = document.getElementById('selectedCityName');
+                    if (cityNameSpan && savedCityName) {
+                        cityNameSpan.textContent = savedCityName;
+                    }
+                }
+            } else {
+                document.getElementById('cityModal').classList.remove('hidden');
+            }
         });
 
-        window.resetQuiz = function() {
-            options.forEach(o => o.classList.remove('selected'));
-            selectedValue = null;
-            resultDiv.classList.add('hidden');
-            hintText.classList.remove('hidden');
+        // Функции для формы
+        function loadForm(placeholderId) {
+            var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+            var xhr = new XHR();
+            xhr.onload = function () {
+                document.getElementById(placeholderId).innerHTML = this.response;
+                Array.from(document.getElementById(placeholderId).getElementsByTagName("script")).forEach(
+                    el => eval(el.innerHTML)
+                );
+            };
+            xhr.open("GET", "https://lk.newapi.ru/form/101/51405/html", true);
+            xhr.send();
+        }
+
+        window.showServicesForm = function(serviceType) {
+            const formContainer = document.getElementById('servicesFormContainer');
+            formContainer.classList.remove('hidden');
+            
+            formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            if (document.getElementById('sltop__form_placeholder_services').innerHTML === '') {
+                loadForm('sltop__form_placeholder_services');
+            }
         };
 
-        codeSpan.addEventListener('click', function() {
-            navigator.clipboard.writeText(this.innerText).then(() => {
-                alert('Код скопирован');
-            }).catch(() => {});
-        });
+        // Смена города
+        window.changeCity = function() {
+            localStorage.removeItem('cityRemembered');
+            localStorage.removeItem('selectedCity');
+            localStorage.removeItem('selectedCityName');
+            location.reload();
+        };
     </script>
 </body>
 </html>
