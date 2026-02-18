@@ -221,7 +221,8 @@
             background: #FFFFFF;
             border-radius: 40px;
             padding: 28px 32px;
-            align-items: flex-start;
+            display: flex;
+            align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
@@ -229,27 +230,17 @@
             box-shadow: 0 15px 25px -20px rgba(0,0,0,0.2);
         }
 
-        .form-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .form-header .result-code-box {
+        .result-code-box {
             background: #F6F2EE;
             border-radius: 60px;
             padding: 12px 36px;
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             font-weight: 700;
             letter-spacing: 5px;
             color: #2C3A4B;
             border: 1px solid #DBC9B5;
             cursor: pointer;
             transition: 0.2s;
-            display: inline-block;
         }
         .result-code-box:hover {
             background: #ECE4DB;
@@ -351,7 +342,6 @@
             text-decoration: none;
             border: 1px solid #DBC9B5;
             transition: 0.2s;
-            cursor: pointer;
         }
         .service-card .price i {
             font-size: 0.9rem;
@@ -463,228 +453,13 @@
 
         .hidden { display: none; }
         .text-center { text-align: center; }
-        
-        /* -------------------- УЛУЧШЕННЫЕ СТИЛИ ДЛЯ ФОРМ -------------------- */
-        
-        /* Основные контейнеры форм */
-        .result-preview-modern,
-        .services-form-container {
-            background: #FFFFFF;
-            border-radius: 40px;
-            padding: 28px 32px;
-            border: 1px solid #EADDCB;
-            box-shadow: 0 15px 25px -20px rgba(0,0,0,0.2);
-            width: 100%;
-            box-sizing: border-box;
-        }
 
-        /* Плейсхолдеры форм занимают 100% ширины */
-        #sltop__form_placeholder_51405,
-        #sltop__form_placeholder_services {
-            margin-top: 20px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        /* Стили для всех элементов формы */
-        #sltop__form_placeholder_51405 form,
-        #sltop__form_placeholder_services form {
-            background: transparent !important;
-            box-shadow: none !important;
-            padding: 0 !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-        }
-        
-        /* Все поля ввода занимают всю ширину */
-        #sltop__form_placeholder_51405 input,
-        #sltop__form_placeholder_services input,
-        #sltop__form_placeholder_51405 textarea,
-        #sltop__form_placeholder_services textarea,
-        #sltop__form_placeholder_51405 select,
-        #sltop__form_placeholder_services select {
-            background: #F6F2EE;
-            border: 1px solid #DBC9B5;
-            border-radius: 30px;
-            padding: 14px 22px;
-            font-family: 'Manrope', sans-serif;
-            width: 100% !important;
-            max-width: 100% !important;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-            font-size: 16px; /* Предотвращает масштабирование на iPhone */
-        }
-        
-        /* Кнопки отправки */
-        #sltop__form_placeholder_51405 button,
-        #sltop__form_placeholder_services button {
-            background: #2C3A4B;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 16px 34px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.25s;
-            width: 100% !important;
-            max-width: 100% !important;
-            font-family: 'Manrope', sans-serif;
-            font-size: 1rem;
-            box-sizing: border-box;
-            margin-top: 8px;
-        }
-        
-        #sltop__form_placeholder_51405 button:hover,
-        #sltop__form_placeholder_services button:hover {
-            background: #1F2A3A;
-            transform: translateY(-2px);
-        }
-
-        /* Контейнер для формы после услуг */
-        .services-form-container {
-            margin: 30px 0 50px;
-        }
-
-        /* -------------------- АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ -------------------- */
-        @media (max-width: 768px) {
-            /* Убираем отступы контейнера на мобильных */
-            .container {
-                padding: 0 16px;
-            }
-            
-            /* Расширяем карточки форм на всю ширину */
-            .quiz-card {
-                padding: 30px 20px;
-                border-radius: 36px;
-            }
-            
-            .result-preview-modern,
-            .services-form-container {
-                padding: 22px 20px;
-                border-radius: 30px;
-                margin-left: -4px;
-                margin-right: -4px;
-                width: calc(100% + 8px);
-            }
-            
-            /* Увеличиваем поля ввода для удобного касания */
-            #sltop__form_placeholder_51405 input,
-            #sltop__form_placeholder_services input,
-            #sltop__form_placeholder_51405 textarea,
-            #sltop__form_placeholder_services textarea,
-            #sltop__form_placeholder_51405 select,
-            #sltop__form_placeholder_services select {
-                padding: 16px 22px;
-                font-size: 16px;
-                margin-bottom: 14px;
-            }
-            
-            /* Увеличиваем кнопку отправки */
-            #sltop__form_placeholder_51405 button,
-            #sltop__form_placeholder_services button {
-                padding: 18px 34px;
-                font-size: 1.1rem;
-            }
-            
-            /* Адаптируем заголовок формы */
-            .form-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-            
-            .form-header .result-code-box {
-                font-size: 1.8rem;
-                padding: 10px 28px;
-                width: 100%;
-                text-align: center;
-                box-sizing: border-box;
-            }
-            
-            .form-header .btn-outline {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            /* Увеличиваем отступы в карточке мастера */
-            .master-card {
-                padding: 35px 25px;
-                border-radius: 36px;
-            }
-            
-            .master-photo {
-                width: 130px;
-                height: 130px;
-                font-size: 4.5rem;
-            }
-            
-            .master-info h3 {
-                font-size: 2rem;
-            }
-            
-            /* Адаптируем сетку услуг */
-            .services-grid {
-                gap: 16px;
-            }
-            
-            .service-card {
-                padding: 25px 15px;
-            }
-            
-            /* Адаптируем блок с преимуществами */
-            .features-grid {
-                padding: 35px 25px;
-                border-radius: 36px;
-            }
-            
-            .feature-item h3 {
-                font-size: 1.6rem;
-            }
-        }
-
-        /* Для очень маленьких экранов */
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 12px;
-            }
-            
-            .quiz-card {
-                padding: 25px 16px;
-            }
-            
-            .result-preview-modern,
-            .services-form-container {
-                padding: 18px 16px;
-                width: calc(100% + 8px);
-            }
-            
-            #sltop__form_placeholder_51405 input,
-            #sltop__form_placeholder_services input,
-            #sltop__form_placeholder_51405 textarea,
-            #sltop__form_placeholder_services textarea,
-            #sltop__form_placeholder_51405 select,
-            #sltop__form_placeholder_services select {
-                padding: 14px 18px;
-            }
-            
-            .form-header .result-code-box {
-                font-size: 1.6rem;
-                padding: 8px 20px;
-            }
-            
-            .quiz-option {
-                padding: 14px 16px;
-                font-size: 0.95rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .hero h1 {
-                font-size: clamp(2.2rem, 7vw, 3.5rem);
-            }
+        @media (max-width: 700px) {
+            .hero { min-height: 70vh; }
+            .quiz-card { padding: 30px 25px; }
+            .quiz-card .quiz-question { font-size: 1.8rem; }
+            h2 { font-size: 2.2rem; }
+            .result-preview-modern { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -722,16 +497,14 @@
             </div>
             
             <div id="resultPreview" class="result-preview-modern hidden">
-                <div class="form-header">
-                    <div>
-                        <div style="font-size: 1rem; color: #4A3F35;">ваш персональный код:</div>
-                        <div class="result-code-box" id="generatedCode">4712</div>
-                    </div>
-                    <button class="btn btn-outline" onclick="resetQuiz()"><i class="fas fa-undo-alt"></i> Выбрать другую проблему</button>
+                <div>
+                    <div style="font-size: 1rem; color: #4A3F35;">персональный код:</div>
+                    <div class="result-code-box" id="generatedCode">4712</div>
                 </div>
-                
-                <!-- Форма обратной связи -->
-                <div id="sltop__form_placeholder_51405"></div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="#" id="telegramLink" class="btn btn-primary" target="_blank"><i class="fab fa-telegram-plane"></i> Связаться быстро</a>
+                    <button class="btn btn-outline" onclick="resetQuiz()"><i class="fas fa-undo-alt"></i> Заново</button>
+                </div>
             </div>
             <p class="text-center" style="margin-top: 15px; color: #6F5E4E;" id="hintText"><i class="far fa-hand-pointer"></i> нажмите на проблему</p>
         </div>
@@ -739,26 +512,14 @@
         <!-- Services with neutral icons and "уточнить цену" buttons -->
         <h2>Что я делаю</h2>
         <div class="services-grid">
-            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><span class="price" onclick="showServicesForm('mixer')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><span class="price" onclick="showServicesForm('blockage')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><span class="price" onclick="showServicesForm('leak')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><span class="price" onclick="showServicesForm('heater')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-            <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><span class="price" onclick="showServicesForm('washer')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><span class="price" onclick="showServicesForm('toilet')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><span class="price" onclick="showServicesForm('towel')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><span class="price" onclick="showServicesForm('meter')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
-        </div>
-
-        <!-- Контейнер для формы из блока услуг -->
-        <div id="servicesFormContainer" class="services-form-container hidden">
-            <div class="form-header">
-                <div>
-                    <div style="font-size: 1rem; color: #4A3F35;">ваш персональный код:</div>
-                    <div class="result-code-box" id="servicesGeneratedCode">4712</div>
-                </div>
-                <button class="btn btn-outline" onclick="hideServicesForm()"><i class="fas fa-times"></i> Закрыть</button>
-            </div>
-            <div id="sltop__form_placeholder_services"></div>
+            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
         </div>
 
         <!-- Master card with quality badge instead of discount -->
@@ -800,31 +561,8 @@
         const resultDiv = document.getElementById('resultPreview');
         const hintText = document.getElementById('hintText');
         const codeSpan = document.getElementById('generatedCode');
-        const servicesFormContainer = document.getElementById('servicesFormContainer');
-        const servicesCodeSpan = document.getElementById('servicesGeneratedCode');
+        const telegramLink = document.getElementById('telegramLink');
         let selectedValue = null;
-
-        function loadForm(placeholderId) {
-            var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-            var xhr = new XHR();
-            xhr.onload = function () {
-                document.getElementById(placeholderId).innerHTML = this.response;
-                Array.from(document.getElementById(placeholderId).getElementsByTagName("script")).forEach(
-                    el => eval(el.innerHTML)
-                );
-            };
-            xhr.open("GET", "https://lk.newapi.ru/form/101/51405/html", true);
-            xhr.send();
-        }
-
-        function generateCode(value) {
-            let hash = 0;
-            for (let i = 0; i < value.length; i++) {
-                hash = ((hash << 5) - hash) + value.charCodeAt(i);
-                hash |= 0;
-            }
-            return Math.abs(hash % 9000 + 1000);
-        }
 
         options.forEach(opt => {
             opt.addEventListener('click', function() {
@@ -832,13 +570,16 @@
                 this.classList.add('selected');
                 selectedValue = this.getAttribute('data-value');
                 
-                let code = generateCode(selectedValue);
+                let hash = 0;
+                for (let i = 0; i < selectedValue.length; i++) {
+                    hash = ((hash << 5) - hash) + selectedValue.charCodeAt(i);
+                    hash |= 0;
+                }
+                let code = Math.abs(hash % 9000 + 1000);
                 codeSpan.innerText = code;
+                telegramLink.href = `https://t.me/cantexniks_bot?start=${code}`;
                 resultDiv.classList.remove('hidden');
                 hintText.classList.add('hidden');
-                
-                // Загружаем форму
-                loadForm('sltop__form_placeholder_51405');
             });
         });
 
@@ -847,36 +588,9 @@
             selectedValue = null;
             resultDiv.classList.add('hidden');
             hintText.classList.remove('hidden');
-            // Очищаем форму
-            document.getElementById("sltop__form_placeholder_51405").innerHTML = '';
         };
 
         codeSpan.addEventListener('click', function() {
-            navigator.clipboard.writeText(this.innerText).then(() => {
-                alert('Код скопирован');
-            }).catch(() => {});
-        });
-
-        // Функции для формы из блока услуг
-        window.showServicesForm = function(serviceType) {
-            let code = generateCode(serviceType);
-            servicesCodeSpan.innerText = code;
-            servicesFormContainer.classList.remove('hidden');
-            
-            // Плавный скролл к форме
-            servicesFormContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Загружаем форму, если она еще не загружена
-            if (document.getElementById('sltop__form_placeholder_services').innerHTML === '') {
-                loadForm('sltop__form_placeholder_services');
-            }
-        };
-
-        window.hideServicesForm = function() {
-            servicesFormContainer.classList.add('hidden');
-        };
-
-        servicesCodeSpan.addEventListener('click', function() {
             navigator.clipboard.writeText(this.innerText).then(() => {
                 alert('Код скопирован');
             }).catch(() => {});
