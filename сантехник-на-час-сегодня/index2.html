@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103551567', 'ym');
+
+        ym(103551567, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/103551567" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Top.Mail.Ru counter -->
+    <script type="text/javascript">
+        var _tmr = window._tmr || (window._tmr = []);
+        _tmr.push({id: "3743283", type: "pageView", start: (new Date()).getTime()});
+        (function (d, w, id) {
+          if (d.getElementById(id)) return;
+          var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+          ts.src = "https://top-fwz1.mail.ru/js/code.js";
+          var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+          if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+        })(document, window, "tmr-code");
+    </script>
+    <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3743283;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+    <!-- /Top.Mail.Ru counter -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Максим | Сантехник с душой</title>
+    
+    <!-- Preload for hero image (local) -->
+    <link rel="preload" as="image" href="img.jpg" imagesrcset="img.jpg">
+
+    <!-- Premium Fonts: Manrope + Literata -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* -------------------- RESET & VARIABLES -------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #FCFAFA;
+            color: #1F2A3A;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .serif, .hello-badge, .quiz-question, .master-info h3, .result-code-box {
+            font-family: 'Literata', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* -------------------- HERO WITH LOCAL BACKGROUND -------------------- */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: #2C3A4B; /* fallback */
+            /* Используем локальный файл img.jpg из той же папки */
+            background-image: url('img.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            isolation: isolate;
+        }
+
+        /* более мягкий градиент для лучшей читаемости */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(95deg, rgba(18, 28, 40, 0.75) 0%, rgba(18, 28, 40, 0.5) 50%, rgba(0, 0, 0, 0.2) 100%);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hello-badge {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 215, 140, 0.3);
+            border-radius: 60px;
+            padding: 10px 26px;
+            display: inline-block;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #FFE7C2;
+        }
+        .hello-badge i {
+            color: #FFB347;
+            margin-right: 8px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 4.8rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0 20px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.95);
+        }
+        .hero-stats span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hero-stats i {
+            color: #FFB347;
+        }
+
+        /* -------------------- QUIZ CARD -------------------- */
+        .quiz-section {
+            margin-top: -70px;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .quiz-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 48px;
+            box-shadow: 0 40px 60px -30px rgba(0, 0, 0, 0.3);
+            padding: 48px 45px;
+        }
+
+        .quiz-card .quiz-question {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #1F2A3A;
+            font-weight: 600;
+        }
+
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-option {
+            background: rgba(245, 240, 235, 0.7);
+            border: 1.5px solid rgba(160, 140, 120, 0.15);
+            border-radius: 60px;
+            padding: 16px 20px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: #1F2A3A;
+            font-size: 1rem;
+        }
+        .quiz-option i {
+            color: #B17E4F;
+            font-size: 1.4rem;
+            width: 28px;
+            text-align: center;
+        }
+        .quiz-option:hover {
+            background: #FFFFFF;
+            border-color: #B17E4F;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -15px rgba(0,0,0,0.2);
+        }
+        .quiz-option.selected {
+            background: #FFFFFF;
+            border-color: #B17E4F;
+            box-shadow: 0 8px 18px -12px #1F2A3A;
+        }
+
+        .result-preview-modern {
+            background: #FFFFFF;
+            border-radius: 40px;
+            padding: 28px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            border: 1px solid #EADDCB;
+            box-shadow: 0 15px 25px -20px rgba(0,0,0,0.2);
+        }
+
+        .result-code-box {
+            background: #F6F2EE;
+            border-radius: 60px;
+            padding: 12px 36px;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            color: #2C3A4B;
+            border: 1px solid #DBC9B5;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .result-code-box:hover {
+            background: #ECE4DB;
+        }
+
+        .btn {
+            padding: 16px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            text-decoration: none;
+            background: white;
+            color: #1F2A3A;
+            border: 1.5px solid #DBC9B5;
+        }
+        .btn-primary {
+            background: #2C3A4B;
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px -10px #2C3A4B;
+        }
+        .btn-primary:hover {
+            background: #1F2A3A;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #B17E4F;
+            color: #2C3A4B;
+        }
+        .btn-outline:hover {
+            background: #F6F2EE;
+        }
+
+        /* services */
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin: 60px 0 30px;
+            color: #1F2A3A;
+            font-family: 'Literata', serif;
+            position: relative;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #B17E4F;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 30px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px -15px rgba(0,0,0,0.05);
+            border: 1px solid #F0E4D8;
+            transition: 0.3s ease;
+        }
+        .service-card:hover {
+            box-shadow: 0 25px 35px -20px #B17E4F30;
+            border-color: #B17E4F;
+            transform: scale(1.02);
+        }
+        .service-card i {
+            font-size: 2.8rem;
+            color: #B17E4F;
+            margin-bottom: 15px;
+        }
+        .service-card .title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .service-card .price {
+            color: #2C3A4B;
+            font-weight: 500;
+            display: inline-block;
+            background: #F6F2EE;
+            padding: 8px 25px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: 1px solid #DBC9B5;
+            transition: 0.2s;
+        }
+        .service-card .price i {
+            font-size: 0.9rem;
+            color: #B17E4F;
+            margin-right: 6px;
+        }
+        .service-card .price:hover {
+            background: #EADDCB;
+        }
+
+        /* master card */
+        .master-card {
+            background: white;
+            border-radius: 48px;
+            padding: 50px 45px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 45px;
+            align-items: center;
+            margin: 60px 0;
+            border: 1px solid #F0E4D8;
+            box-shadow: 0 20px 35px -25px rgba(0,0,0,0.1);
+        }
+        .master-photo {
+            font-size: 5.5rem;
+            color: #B17E4F;
+            background: #F6F2EE;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #DBC9B5;
+        }
+        .master-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        .master-stats {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .stat {
+            background: #F6F2EE;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 500;
+            border: 1px solid #DBC9B5;
+        }
+        .stars {
+            color: #B17E4F;
+            letter-spacing: 5px;
+            font-size: 1.2rem;
+        }
+        .badge-quality {
+            background: #2C3A4B;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge-quality i {
+            color: #FFB347;
+        }
+
+        /* features */
+        .features-grid {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            background: #F6F2EE;
+            border-radius: 48px;
+            padding: 45px 40px;
+            margin: 60px 0;
+            border: 1px solid #DBC9B5;
+        }
+        .feature-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        .feature-item i {
+            color: #B17E4F;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .feature-item h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Literata', serif;
+        }
+
+        /* footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #DBC9B5;
+            color: #4A5568;
+            margin-top: 70px;
+            background: #FFFFFF;
+        }
+
+        .hidden { display: none; }
+        .text-center { text-align: center; }
+
+        @media (max-width: 700px) {
+            .hero { min-height: 70vh; }
+            .quiz-card { padding: 30px 25px; }
+            .quiz-card .quiz-question { font-size: 1.8rem; }
+            h2 { font-size: 2.2rem; }
+            .result-preview-modern { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero with local img.jpg background -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hello-badge">
+                    <i class="fas fa-wrench"></i> Максим, ваш сосед-сантехник
+                </div>
+                <h1>Честный ремонт, быстрый выезд и никакой грязи</h1>
+                <div class="hero-stats">
+                    <span><i class="fas fa-clock"></i> 30–60 минут</span>
+                    <span><i class="fas fa-certificate"></i> Гарантия до 5 лет</span>
+                    <span><i class="fas fa-star"></i> Стаж 15 лет</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container quiz-section">
+        <!-- Glassmorphism quiz card -->
+        <div class="quiz-card" id="quizBlock">
+            <div class="quiz-question">
+                👨‍🔧 Что стряслось? Выберите — остальное я беру на себя
+            </div>
+            <div class="quiz-grid" id="quizOptions">
+                <div class="quiz-option" data-value="leak"><i class="fas fa-water"></i> Протечка / течёт</div>
+                <div class="quiz-option" data-value="blockage"><i class="fas fa-poop"></i> Засорилось</div>
+                <div class="quiz-option" data-value="mixer"><i class="fas fa-shower"></i> Замена смесителя</div>
+                <div class="quiz-option" data-value="heater"><i class="fas fa-water heater"></i> Бойлер</div>
+                <div class="quiz-option" data-value="washer"><i class="fas fa-plug"></i> Подключить технику</div>
+                <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
+            </div>
+            
+            <div id="resultPreview" class="result-preview-modern hidden">
+                <div>
+                    <div style="font-size: 1rem; color: #4A3F35;">персональный код:</div>
+                    <div class="result-code-box" id="generatedCode">4712</div>
+                </div>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="#" id="telegramLink" class="btn btn-primary" target="_blank"><i class="fab fa-telegram-plane"></i> Связаться быстро</a>
+                    <button class="btn btn-outline" onclick="resetQuiz()"><i class="fas fa-undo-alt"></i> Заново</button>
+                </div>
+            </div>
+            <p class="text-center" style="margin-top: 15px; color: #6F5E4E;" id="hintText"><i class="far fa-hand-pointer"></i> нажмите на проблему</p>
+        </div>
+
+        <!-- Services with neutral icons and "уточнить цену" buttons -->
+        <h2>Что я делаю</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+        </div>
+
+        <!-- Master card with quality badge instead of discount -->
+        <div class="master-card">
+            <div class="master-photo"><i class="fas fa-user-tie"></i></div>
+            <div class="master-info">
+                <h3>Максим, сантехник с 15-летним стажем</h3>
+                <p>Знаю, как неприятно, когда течёт кран посреди ночи. Поэтому работаю быстро, аккуратно и без грязи. Цены фиксирую до начала работ.</p>
+                <div class="master-stats">
+                    <span class="stat"><i class="fas fa-check-circle" style="color:#B17E4F;"></i> Гарантия 1 год</span>
+                    <span class="stat"><i class="fas fa-images"></i> Фото до/после</span>
+                    <span class="stat"><i class="fas fa-map-marker-alt"></i> Быстрый выезд</span>
+                </div>
+                <div class="review-row" style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <span>300+ довольных соседей</span>
+                    <span class="badge-quality"><i class="fas fa-medal"></i> Качество на 100%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features-grid">
+            <div class="feature-item"><i class="fas fa-bolt"></i><h3>Срочно?</h3><p>Выезжаю за 30-60 минут без выходных.</p></div>
+            <div class="feature-item"><i class="fas fa-shield-alt"></i><h3>Гарантия</h3><p>1 год на все работы — приеду бесплатно.</p></div>
+            <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h3>Честно</h3><p>Цена фиксируется до ремонта, без сюрпризов.</p></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p><i class="far fa-copyright"></i> Сантехник в вашем городе, 2026 | @cantexniks_bot</p>
+            <p style="margin-top: 12px; font-size: 0.9rem;">* Нажимая кнопки, вы соглашаетесь с политикой конфиденциальности</p>
+        </div>
+    </div>
+
+    <script>
+        const options = document.querySelectorAll('.quiz-grid .quiz-option');
+        const resultDiv = document.getElementById('resultPreview');
+        const hintText = document.getElementById('hintText');
+        const codeSpan = document.getElementById('generatedCode');
+        const telegramLink = document.getElementById('telegramLink');
+        let selectedValue = null;
+
+        options.forEach(opt => {
+            opt.addEventListener('click', function() {
+                options.forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedValue = this.getAttribute('data-value');
+                
+                let hash = 0;
+                for (let i = 0; i < selectedValue.length; i++) {
+                    hash = ((hash << 5) - hash) + selectedValue.charCodeAt(i);
+                    hash |= 0;
+                }
+                let code = Math.abs(hash % 9000 + 1000);
+                codeSpan.innerText = code;
+                telegramLink.href = `https://t.me/cantexniks_bot?start=${code}`;
+                resultDiv.classList.remove('hidden');
+                hintText.classList.add('hidden');
+            });
+        });
+
+        window.resetQuiz = function() {
+            options.forEach(o => o.classList.remove('selected'));
+            selectedValue = null;
+            resultDiv.classList.add('hidden');
+            hintText.classList.remove('hidden');
+        };
+
+        codeSpan.addEventListener('click', function() {
+            navigator.clipboard.writeText(this.innerText).then(() => {
+                alert('Код скопирован');
+            }).catch(() => {});
+        });
+    </script>
+</body>
+</html>
