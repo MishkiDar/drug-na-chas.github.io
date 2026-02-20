@@ -32,7 +32,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Максим | Сантехник с душой</title>
+    <title>Сантехник На Час | Профессиональные сантехнические услуги</title>
     
     <!-- Preload for hero image (local) -->
     <link rel="preload" as="image" href="img.jpg" imagesrcset="img.jpg">
@@ -61,7 +61,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, .serif, .hello-badge, .quiz-question, .master-info h3, .result-code-box {
+        h1, h2, h3, h4, .serif, .hello-badge, .quiz-question, .company-info h3, .result-code-box {
             font-family: 'Literata', serif;
             font-weight: 600;
             letter-spacing: -0.02em;
@@ -80,8 +80,7 @@
             display: flex;
             align-items: center;
             color: white;
-            background-color: #2C3A4B; /* fallback */
-            /* Используем локальный файл img.jpg из той же папки */
+            background-color: #2C3A4B;
             background-image: url('img.jpg');
             background-size: cover;
             background-position: center 30%;
@@ -89,7 +88,6 @@
             isolation: isolate;
         }
 
-        /* более мягкий градиент для лучшей читаемости */
         .hero::before {
             content: '';
             position: absolute;
@@ -221,29 +219,12 @@
             background: #FFFFFF;
             border-radius: 40px;
             padding: 28px 32px;
-            display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
             border: 1px solid #EADDCB;
             box-shadow: 0 15px 25px -20px rgba(0,0,0,0.2);
-        }
-
-        .result-code-box {
-            background: #F6F2EE;
-            border-radius: 60px;
-            padding: 12px 36px;
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: 5px;
-            color: #2C3A4B;
-            border: 1px solid #DBC9B5;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .result-code-box:hover {
-            background: #ECE4DB;
         }
 
         .btn {
@@ -342,6 +323,7 @@
             text-decoration: none;
             border: 1px solid #DBC9B5;
             transition: 0.2s;
+            cursor: pointer;
         }
         .service-card .price i {
             font-size: 0.9rem;
@@ -352,8 +334,8 @@
             background: #EADDCB;
         }
 
-        /* master card */
-        .master-card {
+        /* company card */
+        .company-card {
             background: white;
             border-radius: 48px;
             padding: 50px 45px;
@@ -365,7 +347,7 @@
             border: 1px solid #F0E4D8;
             box-shadow: 0 20px 35px -25px rgba(0,0,0,0.1);
         }
-        .master-photo {
+        .company-photo {
             font-size: 5.5rem;
             color: #B17E4F;
             background: #F6F2EE;
@@ -377,11 +359,11 @@
             justify-content: center;
             border: 2px solid #DBC9B5;
         }
-        .master-info h3 {
+        .company-info h3 {
             font-size: 2.5rem;
             margin-bottom: 12px;
         }
-        .master-stats {
+        .company-stats {
             display: flex;
             gap: 15px;
             margin: 20px 0;
@@ -441,6 +423,172 @@
             font-family: 'Literata', serif;
         }
 
+        /* СТИЛИ ДЛЯ БЛОКОВ (которые остались) */
+        
+        /* О компании */
+        .about-section {
+            background: white;
+            border-radius: 48px;
+            padding: 50px 45px;
+            margin: 60px 0;
+            border: 1px solid #F0E4D8;
+            box-shadow: 0 20px 35px -25px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #4A5568;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        
+        /* Этапы работы */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 40px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #F0E4D8;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #B17E4F;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            font-family: 'Literata', serif;
+        }
+        
+        .step-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: 'Literata', serif;
+        }
+        
+        .step-desc {
+            color: #4A5568;
+        }
+        
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 30px;
+            padding: 25px 30px;
+            border: 1px solid #F0E4D8;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .faq-item:hover {
+            border-color: #B17E4F;
+            box-shadow: 0 10px 20px -15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Literata', serif;
+        }
+        
+        .faq-question i {
+            color: #B17E4F;
+            transition: transform 0.2s;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            margin-top: 15px;
+            color: #4A5568;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* Отзывы */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .review-card {
+            background: white;
+            border-radius: 40px;
+            padding: 35px 30px;
+            border: 1px solid #F0E4D8;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            background: #F6F2EE;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #B17E4F;
+            border: 2px solid #DBC9B5;
+        }
+        
+        .review-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Literata', serif;
+        }
+        
+        .review-stars {
+            color: #FFB347;
+            margin-top: 5px;
+            letter-spacing: 3px;
+        }
+        
+        .review-text {
+            color: #4A5568;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
         /* footer */
         .footer {
             text-align: center;
@@ -453,13 +601,180 @@
 
         .hidden { display: none; }
         .text-center { text-align: center; }
+        
+        /* -------------------- СТИЛИ ДЛЯ ФОРМ -------------------- */
+        
+        /* Основные контейнеры форм */
+        .result-preview-modern,
+        .services-form-container {
+            background: #FFFFFF;
+            border-radius: 40px;
+            padding: 28px 32px;
+            border: 1px solid #EADDCB;
+            box-shadow: 0 15px 25px -20px rgba(0,0,0,0.2);
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-        @media (max-width: 700px) {
-            .hero { min-height: 70vh; }
-            .quiz-card { padding: 30px 25px; }
-            .quiz-card .quiz-question { font-size: 1.8rem; }
-            h2 { font-size: 2.2rem; }
-            .result-preview-modern { flex-direction: column; align-items: flex-start; }
+        /* Убираем скрытие для верхней формы */
+        #formContainerTop {
+            margin-top: 30px;
+        }
+
+        /* Плейсхолдеры форм занимают 100% ширины */
+        #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93,
+        #rip_form__form_placeholder_services {
+            margin-top: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Стили для всех элементов формы */
+        #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 form,
+        #rip_form__form_placeholder_services form {
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+        }
+        
+        /* Все поля ввода занимают всю ширину */
+        #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 input,
+        #rip_form__form_placeholder_services input,
+        #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 textarea,
+        #rip_form__form_placeholder_services textarea,
+        #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 select,
+        #rip_form__form_placeholder_services select {
+            background: #F6F2EE;
+            border: 1px solid #DBC9B5;
+            border-radius: 30px;
+            padding: 14px 22px;
+            font-family: 'Manrope', sans-serif;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        /* Кнопки отправки */
+        #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 button,
+        #rip_form__form_placeholder_services button {
+            background: #2C3A4B;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 34px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            width: 100% !important;
+            max-width: 100% !important;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+            margin-top: 8px;
+        }
+        
+        #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 button:hover,
+        #rip_form__form_placeholder_services button:hover {
+            background: #1F2A3A;
+            transform: translateY(-2px);
+        }
+
+        /* Контейнер для формы из блока услуг */
+        .services-form-container {
+            margin: 30px 0 50px;
+        }
+
+        /* -------------------- АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ -------------------- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .quiz-card {
+                padding: 30px 20px;
+                border-radius: 36px;
+            }
+            
+            .result-preview-modern,
+            .services-form-container,
+            .about-section {
+                padding: 30px 25px;
+                border-radius: 36px;
+            }
+            
+            .company-card {
+                padding: 35px 25px;
+                border-radius: 36px;
+            }
+            
+            .company-photo {
+                width: 130px;
+                height: 130px;
+                font-size: 4.5rem;
+            }
+            
+            .company-info h3 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                gap: 16px;
+            }
+            
+            .service-card {
+                padding: 25px 15px;
+            }
+            
+            .features-grid {
+                padding: 35px 25px;
+                border-radius: 36px;
+            }
+            
+            .feature-item h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+            
+            .quiz-card {
+                padding: 25px 16px;
+            }
+            
+            .result-preview-modern,
+            .services-form-container,
+            .about-section {
+                padding: 25px 20px;
+            }
+            
+            .quiz-option {
+                padding: 14px 16px;
+                font-size: 0.95rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2.2rem, 7vw, 3.5rem);
+            }
+            
+            .step-card {
+                padding: 25px 15px;
+            }
+            
+            .review-card {
+                padding: 25px 20px;
+            }
         }
     </style>
 </head>
@@ -469,132 +784,282 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hello-badge">
-                    <i class="fas fa-wrench"></i> Максим, ваш сосед-сантехник
+                    <i class="fas fa-wrench"></i> Сантехник На Час — профессиональная служба
                 </div>
                 <h1>Честный ремонт, быстрый выезд и никакой грязи</h1>
                 <div class="hero-stats">
                     <span><i class="fas fa-clock"></i> 30–60 минут</span>
                     <span><i class="fas fa-certificate"></i> Гарантия до 5 лет</span>
-                    <span><i class="fas fa-star"></i> Стаж 15 лет</span>
+                    <span><i class="fas fa-users"></i> 15+ опытных мастеров</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="container quiz-section">
-        <!-- Glassmorphism quiz card -->
-        <div class="quiz-card" id="quizBlock">
-            <div class="quiz-question">
-                👨‍🔧 Что стряслось? Выберите — остальное я беру на себя
-            </div>
-            <div class="quiz-grid" id="quizOptions">
-                <div class="quiz-option" data-value="leak"><i class="fas fa-water"></i> Протечка / течёт</div>
-                <div class="quiz-option" data-value="blockage"><i class="fas fa-poop"></i> Засорилось</div>
-                <div class="quiz-option" data-value="mixer"><i class="fas fa-shower"></i> Замена смесителя</div>
-                <div class="quiz-option" data-value="heater"><i class="fas fa-water heater"></i> Бойлер</div>
-                <div class="quiz-option" data-value="washer"><i class="fas fa-plug"></i> Подключить технику</div>
-                <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
-            </div>
-            
-            <div id="resultPreview" class="result-preview-modern hidden">
-                <div>
-                    <div style="font-size: 1rem; color: #4A3F35;">персональный код:</div>
-                    <div class="result-code-box" id="generatedCode">4712</div>
+    <div class="container">
+        <!-- Quiz card section -->
+        <div class="quiz-section">
+            <div class="quiz-card" id="quizBlock">
+                <div class="quiz-question">
+                    👨‍🔧 Что стряслось? Выберите из списка — остальное мы берём на себя
                 </div>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="#" id="telegramLink" class="btn btn-primary" target="_blank"><i class="fab fa-telegram-plane"></i> Связаться быстро</a>
-                    <button class="btn btn-outline" onclick="resetQuiz()"><i class="fas fa-undo-alt"></i> Заново</button>
+                <div class="quiz-grid" id="quizOptions">
+                    <div class="quiz-option" data-value="leak"><i class="fas fa-water"></i> Протечка / течёт</div>
+                    <div class="quiz-option" data-value="blockage"><i class="fas fa-poop"></i> Засорилось</div>
+                    <div class="quiz-option" data-value="mixer"><i class="fas fa-shower"></i> Замена смесителя</div>
+                    <div class="quiz-option" data-value="heater"><i class="fas fa-water heater"></i> Бойлер</div>
+                    <div class="quiz-option" data-value="washer"><i class="fas fa-plug"></i> Подключить технику</div>
+                    <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
+                </div>
+                
+                <!-- Форма всегда видна -->
+                <div id="formContainerTop" class="result-preview-modern">
+                    <div id="rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93"></div>
                 </div>
             </div>
-            <p class="text-center" style="margin-top: 15px; color: #6F5E4E;" id="hintText"><i class="far fa-hand-pointer"></i> нажмите на проблему</p>
         </div>
 
-        <!-- Services with neutral icons and "уточнить цену" buttons -->
-        <h2>Что я делаю</h2>
+        <!-- БЛОК: О компании -->
+        <div class="about-section">
+            <h2>О компании</h2>
+            <div class="about-text">
+                Мы работаем на рынке сантехнических услуг уже более 15 лет. За это время мы помогли тысячам людей решить их бытовые трудности и заслужили репутацию самой надежной компании в этой нише.
+                <br><br>
+                Наши мастера — настоящие профессионалы с опытом от 5 лет, которые постоянно повышают свою квалификацию и внимательно относятся к каждому клиенту. Все сотрудники имеют необходимые сертификаты и допуски к работе.
+            </div>
+        </div>
+
+        <!-- Существующий блок услуг (с кнопками "уточнить цену") -->
+        <h2>Все виды работ</h2>
         <div class="services-grid">
-            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
-            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><a href="https://t.me/cantexniks_bot" target="_blank" class="price"><i class="fab fa-telegram"></i> уточнить цену</a></div>
+            <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><span class="price" onclick="showServicesForm('mixer')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><span class="price" onclick="showServicesForm('blockage')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><span class="price" onclick="showServicesForm('leak')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><span class="price" onclick="showServicesForm('heater')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><span class="price" onclick="showServicesForm('washer')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><span class="price" onclick="showServicesForm('toilet')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><span class="price" onclick="showServicesForm('towel')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
+            <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><span class="price" onclick="showServicesForm('meter')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
         </div>
 
-        <!-- Master card with quality badge instead of discount -->
-        <div class="master-card">
-            <div class="master-photo"><i class="fas fa-user-tie"></i></div>
-            <div class="master-info">
-                <h3>Максим, сантехник с 15-летним стажем</h3>
-                <p>Знаю, как неприятно, когда течёт кран посреди ночи. Поэтому работаю быстро, аккуратно и без грязи. Цены фиксирую до начала работ.</p>
-                <div class="master-stats">
+        <!-- Контейнер для формы из блока услуг -->
+        <div id="servicesFormContainer" class="services-form-container hidden">
+            <div id="rip_form__form_placeholder_services"></div>
+            <div style="text-align: right; margin-top: 15px;">
+                <button class="btn btn-outline" onclick="hideServicesForm()"><i class="fas fa-times"></i> Закрыть</button>
+            </div>
+        </div>
+
+        <!-- БЛОК: Как мы работаем -->
+        <h2>Как проходит наша работа</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-title">Заявка</div>
+                <div class="step-desc">Клиент оставляет заявку на сайте или звонит нашему диспетчеру.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-title">Консультация</div>
+                <div class="step-desc">Менеджер выясняет потребности клиента, уточняет детали и подбирает мастера.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-title">Выезд</div>
+                <div class="step-desc">Сантехник выезжает к вам домой в назначенное время со всеми инструментами.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-title">Работа</div>
+                <div class="step-desc">Мастер быстро и качественно выполняет необходимые работы с гарантией.</div>
+            </div>
+        </div>
+
+        <!-- Карточка компании -->
+        <div class="company-card">
+            <div class="company-photo"><i class="fas fa-building"></i></div>
+            <div class="company-info">
+                <h3>Сантехник На Час — команда профессионалов</h3>
+                <p>Мы знаем, как неприятно, когда течёт кран посреди ночи. Поэтому наши мастера работают быстро, аккуратно и без грязи. Цены фиксируем до начала работ, все дополнительные услуги только с согласия клиента.</p>
+                <div class="company-stats">
                     <span class="stat"><i class="fas fa-check-circle" style="color:#B17E4F;"></i> Гарантия 1 год</span>
                     <span class="stat"><i class="fas fa-images"></i> Фото до/после</span>
                     <span class="stat"><i class="fas fa-map-marker-alt"></i> Быстрый выезд</span>
+                    <span class="stat"><i class="fas fa-users"></i> 15+ мастеров</span>
                 </div>
                 <div class="review-row" style="display: flex; gap: 25px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
                     <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                    <span>300+ довольных соседей</span>
+                    <span>500+ довольных клиентов</span>
                     <span class="badge-quality"><i class="fas fa-medal"></i> Качество на 100%</span>
                 </div>
             </div>
         </div>
 
-        <!-- Features -->
+        <!-- БЛОК: FAQ -->
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    Как быстро приедет сантехник после вызова?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Мастер приедет к вам в удобное для вас время. Если вызов срочный, то он будет у вас в течение 30 минут - 1 часа. Мы работаем без выходных с 8:00 до 23:00.
+                </div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    Смогу ли я узнать точную стоимость услуги по телефону?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Точную стоимость работы может определить только мастер непосредственно на объекте после осмотра. Однако наш менеджер сориентирует вас по ценам и назовет приблизительную стоимость.
+                </div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    Нужна ли подготовка к приезду сантехника?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Особых приготовлений не требуется, но желательно освободить место предполагаемого ремонта от лишних вещей. Мастер приедет со всеми необходимыми инструментами и материалами.
+                </div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    Сколько времени занимает работа?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Каждый случай индивидуален. В среднем работа занимает 1-3 часа. Сложные случаи (замена стояков, монтаж санузла под ключ) могут занять больше времени, о чем мастер предупредит заранее.
+                </div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    Даете ли вы гарантию на работы?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Да, мы даем гарантию на все виды работ от 1 года. Если в течение гарантийного срока возникнут проблемы, мы приедем и устраним их бесплатно.
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК: Отзывы клиентов -->
+        <h2>Отзывы наших клиентов</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="review-name">Максим</div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Хочу сказать огромное спасибо ребятам из Сантехник На Час, которые неоднократно выручали меня и мою семью. Моя работа связана с частыми поездками и, к сожалению, не всегда могу помочь жене с бытовыми поломками. Уже пару лет я стабильно обращаюсь к ним и всегда точно знаю, что все будет сделано быстро, качественно и за адекватные деньги. Отличная компания!"
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="review-name">Владимир</div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "У нас случилась небольшая авария в ванной и требовалась срочная помощь. Мастер приехал уже через 30 минут после звонка и оперативно устранил проблему. Благодаря быстрой работе мы не успели затопить соседей, за что очень благодарен компании и мастеру Михаилу. Спасибо! Буду обращаться сам и рекомендовать друзьям."
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="review-name">Валерия</div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Осталась очень довольна услугой. Вызвала мастера для замены смесителя. Больше всего понравилось, что мастер не пытался навязать дополнительные услуги и раскрутить на деньги. Честно признаюсь, переживала именно за это. Приятно, что есть порядочные компании, которые не стремятся нажиться на клиенте любой ценой. Цена была именно та, что обговаривали изначально."
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="review-name">Алена</div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="review-text">
+                    "Обращалась в Сантехник На Час, когда делала ремонт в родительском доме. Нужно было установить ванну, раковину и унитаз. Важно было не только качественно установить, но и проверить, чтобы все работало без протечек. Мастер сделал все грамотно и за адекватные деньги. Прошло уже полгода, все отлично работает, спасибо большое!"
+                </div>
+            </div>
+        </div>
+
+        <!-- Features блок -->
         <div class="features-grid">
-            <div class="feature-item"><i class="fas fa-bolt"></i><h3>Срочно?</h3><p>Выезжаю за 30-60 минут без выходных.</p></div>
-            <div class="feature-item"><i class="fas fa-shield-alt"></i><h3>Гарантия</h3><p>1 год на все работы — приеду бесплатно.</p></div>
-            <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h3>Честно</h3><p>Цена фиксируется до ремонта, без сюрпризов.</p></div>
+            <div class="feature-item"><i class="fas fa-bolt"></i><h3>Срочный выезд</h3><p>Приедем за 30-60 минут без выходных. Работаем ежедневно.</p></div>
+            <div class="feature-item"><i class="fas fa-shield-alt"></i><h3>Гарантия</h3><p>От 1 года на все работы — приедем бесплатно, если что-то случится.</p></div>
+            <div class="feature-item"><i class="fas fa-hand-holding-heart"></i><h3>Честные цены</h3><p>Стоимость фиксируется до начала работ, никаких скрытых платежей.</p></div>
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-            <p><i class="far fa-copyright"></i> Сантехник в вашем городе, 2026 | @cantexniks_bot</p>
+            <p><i class="far fa-copyright"></i> Сантехник На Час, 2026 | Профессиональные сантехнические услуги</p>
             <p style="margin-top: 12px; font-size: 0.9rem;">* Нажимая кнопки, вы соглашаетесь с политикой конфиденциальности</p>
         </div>
     </div>
 
     <script>
         const options = document.querySelectorAll('.quiz-grid .quiz-option');
-        const resultDiv = document.getElementById('resultPreview');
-        const hintText = document.getElementById('hintText');
-        const codeSpan = document.getElementById('generatedCode');
-        const telegramLink = document.getElementById('telegramLink');
+        const servicesFormContainer = document.getElementById('servicesFormContainer');
         let selectedValue = null;
 
+        // Функция для загрузки новой формы
+        function loadNewForm(placeholderId) {
+            var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+            var xhr = new XHR();
+            xhr.onload = function () {
+                document.getElementById(placeholderId).innerHTML = this.response;
+                Array.from(document.getElementById(placeholderId).getElementsByTagName("script")).forEach(
+                    el => eval(el.innerHTML)
+                );
+            };
+            // Закодированный URL для новой формы
+            xhr.open("GET", decodeURIComponent(escape(window.atob("aHR0cHM6Ly9jcGEucnVraS1pei1wbGVjaC5ydS9hcGkvZm9ybXMvZDlkNTE5YjQtMTJmMS00MGJkLWI1ZGYtY2ZlYmIzNmQ1YjkzL2h0bWw="))), true);
+            xhr.send();
+        }
+
+        // Загружаем верхнюю форму сразу при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNewForm('rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93');
+        });
+
+        // Обработчики для опций квиза
         options.forEach(opt => {
             opt.addEventListener('click', function() {
                 options.forEach(o => o.classList.remove('selected'));
                 this.classList.add('selected');
                 selectedValue = this.getAttribute('data-value');
-                
-                let hash = 0;
-                for (let i = 0; i < selectedValue.length; i++) {
-                    hash = ((hash << 5) - hash) + selectedValue.charCodeAt(i);
-                    hash |= 0;
-                }
-                let code = Math.abs(hash % 9000 + 1000);
-                codeSpan.innerText = code;
-                telegramLink.href = `https://t.me/cantexniks_bot?start=${code}`;
-                resultDiv.classList.remove('hidden');
-                hintText.classList.add('hidden');
             });
         });
 
-        window.resetQuiz = function() {
-            options.forEach(o => o.classList.remove('selected'));
-            selectedValue = null;
-            resultDiv.classList.add('hidden');
-            hintText.classList.remove('hidden');
+        // Функции для формы из блока услуг
+        window.showServicesForm = function(serviceType) {
+            servicesFormContainer.classList.remove('hidden');
+            servicesFormContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            if (document.getElementById('rip_form__form_placeholder_services').innerHTML === '') {
+                loadNewForm('rip_form__form_placeholder_services');
+            }
         };
 
-        codeSpan.addEventListener('click', function() {
-            navigator.clipboard.writeText(this.innerText).then(() => {
-                alert('Код скопирован');
-            }).catch(() => {});
-        });
+        window.hideServicesForm = function() {
+            servicesFormContainer.classList.add('hidden');
+        };
     </script>
 </body>
 </html>
