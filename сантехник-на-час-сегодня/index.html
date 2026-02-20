@@ -812,9 +812,20 @@
                     <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
                 </div>
                 
-                <!-- Форма всегда видна -->
+                <!-- Форма всегда видна - вставлен оригинальный код -->
                 <div id="formContainerTop" class="result-preview-modern">
                     <div id="rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93"></div>
+                    <script>
+                        var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+                        var xhr = new XHR();
+                        xhr.onload = function () {
+                            document.getElementById("rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93").innerHTML = this.response;
+                            Array.from(document.getElementById("rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93").getElementsByTagName("script")).forEach(
+                                el => eval(el.innerHTML));
+                        };
+                        xhr.open("GET", decodeURIComponent(escape(window.atob("aHR0cHM6Ly9jcGEucnVraS1pei1wbGVjaC5ydS9hcGkvZm9ybXMvZDlkNTE5YjQtMTJmMS00MGJkLWI1ZGYtY2ZlYmIzNmQ1YjkzL2h0bWw="))), true);
+                        xhr.send();
+                    </script>
                 </div>
             </div>
         </div>
@@ -842,9 +853,20 @@
             <div class="service-card"><i class="fas fa-calculator"></i><div class="title">Счетчики воды</div><span class="price" onclick="showServicesForm('meter')"><i class="fab fa-telegram"></i> уточнить цену</span></div>
         </div>
 
-        <!-- Контейнер для формы из блока услуг -->
+        <!-- Контейнер для формы из блока услуг - с оригинальным кодом -->
         <div id="servicesFormContainer" class="services-form-container hidden">
             <div id="rip_form__form_placeholder_services"></div>
+            <script>
+                var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+                var xhr = new XHR();
+                xhr.onload = function () {
+                    document.getElementById("rip_form__form_placeholder_services").innerHTML = this.response;
+                    Array.from(document.getElementById("rip_form__form_placeholder_services").getElementsByTagName("script")).forEach(
+                        el => eval(el.innerHTML));
+                };
+                xhr.open("GET", decodeURIComponent(escape(window.atob("aHR0cHM6Ly9jcGEucnVraS1pei1wbGVjaC5ydS9hcGkvZm9ybXMvZDlkNTE5YjQtMTJmMS00MGJkLWI1ZGYtY2ZlYmIzNmQ1YjkzL2h0bWw="))), true);
+                xhr.send();
+            </script>
             <div style="text-align: right; margin-top: 15px;">
                 <button class="btn btn-outline" onclick="hideServicesForm()"><i class="fas fa-times"></i> Закрыть</button>
             </div>
@@ -1018,26 +1040,6 @@
         const servicesFormContainer = document.getElementById('servicesFormContainer');
         let selectedValue = null;
 
-        // Функция для загрузки новой формы
-        function loadNewForm(placeholderId) {
-            var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-            var xhr = new XHR();
-            xhr.onload = function () {
-                document.getElementById(placeholderId).innerHTML = this.response;
-                Array.from(document.getElementById(placeholderId).getElementsByTagName("script")).forEach(
-                    el => eval(el.innerHTML)
-                );
-            };
-            // Закодированный URL для новой формы
-            xhr.open("GET", decodeURIComponent(escape(window.atob("aHR0cHM6Ly9jcGEucnVraS1pei1wbGVjaC5ydS9hcGkvZm9ybXMvZDlkNTE5YjQtMTJmMS00MGJkLWI1ZGYtY2ZlYmIzNmQ1YjkzL2h0bWw="))), true);
-            xhr.send();
-        }
-
-        // Загружаем верхнюю форму сразу при загрузке страницы
-        document.addEventListener('DOMContentLoaded', function() {
-            loadNewForm('rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93');
-        });
-
         // Обработчики для опций квиза
         options.forEach(opt => {
             opt.addEventListener('click', function() {
@@ -1051,10 +1053,6 @@
         window.showServicesForm = function(serviceType) {
             servicesFormContainer.classList.remove('hidden');
             servicesFormContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            if (document.getElementById('rip_form__form_placeholder_services').innerHTML === '') {
-                loadNewForm('rip_form__form_placeholder_services');
-            }
         };
 
         window.hideServicesForm = function() {
