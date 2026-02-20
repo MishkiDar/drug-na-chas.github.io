@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спасибо за заявку</title>
+
+    <!-- Подключаем профессиональный шрифт Inter (чистый, современный) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(145deg, #e6f0fa 0%, #d4e6f5 100%); /* Мягкий голубой градиент */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            line-height: 1.5;
+            color: #0b2b40; /* Темно-синий для контраста */
+        }
+
+        .card {
+            max-width: 560px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 30px 60px rgba(0, 60, 100, 0.15),
+                        0 10px 25px rgba(0, 40, 70, 0.1),
+                        inset 0 2px 4px rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        /* Голубая иконка-галочка (опционально, для мягкости) */
+        .checkmark-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(64, 164, 235, 0.2); /* Полупрозрачный голубой */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.8rem auto;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 14px rgba(0, 120, 200, 0.3);
+        }
+
+        .checkmark-circle svg {
+            width: 42px;
+            height: 42px;
+            fill: none;
+            stroke: #1f7faa; /* Спокойный голубой */
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+            background: linear-gradient(135deg, #115f7a, #1c3f5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .message {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #165a72;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.7rem 1.2rem;
+            border-radius: 60px;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #2c5770;
+            margin-bottom: 1.8rem;
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #4f7e96;
+            border-top: 1px dashed rgba(31, 127, 170, 0.3);
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Элемент для визуального спокойствия */
+        .wave {
+            font-size: 1.6rem;
+            opacity: 0.5;
+            margin-top: 0.5rem;
+        }
+    </style>
+
+    <!-- ================== ВСТАВЛЕНЫ СЧЁТЧИКИ ================== -->
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103551567', 'ym');
+
+        ym(103551567, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/103551567" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Top.Mail.Ru counter -->
+    <script type="text/javascript">
+        var _tmr = window._tmr || (window._tmr = []);
+        _tmr.push({id: "3743283", type: "pageView", start: (new Date()).getTime()});
+        (function (d, w, id) {
+          if (d.getElementById(id)) return;
+          var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+          ts.src = "https://top-fwz1.mail.ru/js/code.js";
+          var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+          if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+        })(document, window, "tmr-code");
+    </script>
+    <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3743283;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+    <!-- /Top.Mail.Ru counter -->
+
+    <!-- ================== КОНЕЦ СЧЁТЧИКОВ ================== -->
+
+</head>
+<body>
+    <div class="card">
+        <!-- Голубая иконка (простая, стильная) -->
+        <div class="checkmark-circle">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 6L9 17L4 12" stroke="#1f7faa" stroke-width="2.5" fill="none"/>
+            </svg>
+        </div>
+
+        <!-- Основной текст благодарности -->
+        <h1>Спасибо за заявку!</h1>
+        <div class="message">Я скоро вам перезвоню</div>
+        <p>Обычно это занимает не больше 15 минут.<br>Пожалуйста, будьте на связи.</p>
+
+        <!-- Лёгкий декоративный элемент (волны) -->
+        <div class="wave">⏤ ⏤ ⏤</div>
+        <div class="note">хорошего дня ✦</div>
+    </div>
+
+    <!-- Дополнительный скрипт для точной работы пикселей (если нужно продублировать вызов pageView) не требуется, они уже выше. -->
+</body>
+</html>
