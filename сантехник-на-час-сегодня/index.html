@@ -91,10 +91,10 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            background: rgba(0, 120, 200, 0.9); /* Синий с 30% прозрачности на темном фоне */
+            background: #FFB347; /* Изменено на оранжевый, как у других кнопок */
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            color: white;
+            color: #1F2A3A; /* Темный текст для контраста */
             padding: 14px 28px;
             border-radius: 60px;
             font-weight: 700;
@@ -109,14 +109,14 @@
             white-space: nowrap;
         }
         .header-phone:hover {
-            background: rgba(0, 140, 230, 0.95);
+            background: #FFA01E;
             transform: translateX(-50%) scale(1.05);
             box-shadow: 0 12px 25px rgba(0, 80, 160, 0.4);
             border-color: rgba(255, 255, 255, 0.5);
         }
         .header-phone i {
             font-size: 1.3rem;
-            color: white;
+            color: #1F2A3A; /* Иконка тоже темная */
         }
 
         /* Добавляем отступ сверху для hero */
@@ -694,7 +694,7 @@
         .hidden { display: none; }
         .text-center { text-align: center; }
         
-        /* -------------------- СТИЛИ ДЛЯ ФОРМ -------------------- */
+        /* -------------------- СТИЛИ ДЛЯ ФОРМ (ИСПРАВЛЕНЫ) -------------------- */
         
         .result-preview-modern,
         .services-form-container {
@@ -711,6 +711,7 @@
             margin-top: 30px;
         }
 
+        /* Контейнеры форм */
         #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93,
         #rip_form__form_placeholder_services {
             margin-top: 20px;
@@ -718,6 +719,7 @@
             box-sizing: border-box;
         }
         
+        /* Стили для встроенных форм */
         #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 form,
         #rip_form__form_placeholder_services form {
             background: transparent !important;
@@ -728,6 +730,7 @@
             margin: 0 !important;
         }
         
+        /* ПОЛЯ ВВОДА: растягиваем на всю ширину */
         #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 input,
         #rip_form__form_placeholder_services input,
         #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 textarea,
@@ -739,13 +742,14 @@
             border-radius: 30px;
             padding: 14px 22px;
             font-family: 'Manrope', sans-serif;
-            width: 100% !important;
+            width: 100% !important; /* РАСТЯГИВАЕМ */
             max-width: 100% !important;
             margin-bottom: 16px;
             box-sizing: border-box;
             font-size: 16px;
         }
         
+        /* Кнопки форм */
         #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 button,
         #rip_form__form_placeholder_services button {
             background: #2C3A4B;
@@ -756,7 +760,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.25s;
-            width: 100% !important;
+            width: 100% !important; /* Кнопка тоже на всю ширину */
             max-width: 100% !important;
             font-family: 'Manrope', sans-serif;
             font-size: 1rem;
@@ -774,7 +778,7 @@
             margin: 30px 0 50px;
         }
 
-        /* Адаптация для мобильных */
+        /* Адаптация для мобильных: расширяем блок с формой */
         @media (max-width: 768px) {
             .header-phone {
                 top: 10px;
@@ -797,6 +801,26 @@
             }
         }
 
+        /* Исправление для мобильных (отступы 5px) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 5px; /* Отступы слева и справа по 5px */
+            }
+            
+            .quiz-card {
+                padding: 30px 15px; /* Уменьшаем внутренние отступы */
+            }
+            
+            .result-preview-modern {
+                padding: 20px 15px; /* Уменьшаем внутренние отступы */
+            }
+            
+            #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 input,
+            #rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93 button {
+                width: 100% !important;
+            }
+        }
+
         @media (max-width: 480px) {
             .header-phone {
                 padding: 8px 15px;
@@ -806,13 +830,13 @@
                 margin-top: 65px;
             }
             .container {
-                padding: 0 12px;
+                padding: 0 5px; /* Отступы слева и справа по 5px */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Фиксированный телефон в шапке (теперь по центру с синим фоном) -->
+    <!-- Фиксированный телефон в шапке (теперь оранжевый) -->
     <a href="tel:+79012596840" class="header-phone">
         <i class="fas fa-phone-alt"></i> +7 (901) 259-68-40
     </a>
@@ -860,7 +884,7 @@
                     <div><strong>Выезд за 30 минут!</strong> Мастер уже в пути после звонка</div>
                 </div>
                 
-                <!-- Форма -->
+                <!-- Форма (поля растянуты) -->
                 <div id="formContainerTop" class="result-preview-modern">
                     <div id="rip_form__form_placeholder_d9d519b4-12f1-40bd-b5df-cfebb36d5b93"></div>
                     <script>
