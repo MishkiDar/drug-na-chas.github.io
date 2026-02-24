@@ -73,11 +73,12 @@
             padding: 0 28px;
         }
 
-        /* -------------------- ТЕЛЕФОН В ШАПКЕ (всегда виден) -------------------- */
+        /* -------------------- ТЕЛЕФОН В ШАПКЕ (всегда висит по центру) -------------------- */
         .header-phone {
             position: fixed;
             top: 20px;
-            right: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
             background: #FFB347;
             color: #1F2A3A;
@@ -92,17 +93,18 @@
             align-items: center;
             gap: 10px;
             transition: all 0.2s;
+            white-space: nowrap;
         }
         .header-phone:hover {
             background: #FFA01E;
-            transform: scale(1.05);
+            transform: translateX(-50%) scale(1.05);
             box-shadow: 0 12px 25px rgba(0,0,0,0.2);
         }
         .header-phone i {
             font-size: 1.3rem;
         }
 
-        /* -------------------- HERO -------------------- */
+        /* Добавляем отступ сверху для hero, чтобы приветственный баннер не перекрывался кнопкой */
         .hero {
             position: relative;
             min-height: 85vh;
@@ -115,6 +117,7 @@
             background-position: center 30%;
             background-repeat: no-repeat;
             isolation: isolate;
+            margin-top: 80px; /* Сдвигаем hero вниз, чтобы баннер был под кнопкой */
         }
 
         .hero::before {
@@ -758,9 +761,11 @@
         @media (max-width: 768px) {
             .header-phone {
                 top: 10px;
-                right: 15px;
                 padding: 10px 18px;
                 font-size: 1rem;
+            }
+            .hero {
+                margin-top: 70px; /* Уменьшаем отступ для мобильных */
             }
             .container {
                 padding: 0 16px;
@@ -780,6 +785,9 @@
                 padding: 8px 15px;
                 font-size: 0.9rem;
             }
+            .hero {
+                margin-top: 65px;
+            }
             .container {
                 padding: 0 12px;
             }
@@ -787,7 +795,7 @@
     </style>
 </head>
 <body>
-    <!-- Фиксированный телефон в шапке -->
+    <!-- Фиксированный телефон в шапке (теперь по центру) -->
     <a href="tel:+79012596840" class="header-phone">
         <i class="fas fa-phone-alt"></i> +7 (901) 259-68-40
     </a>
