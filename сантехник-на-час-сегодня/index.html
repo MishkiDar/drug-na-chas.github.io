@@ -31,7 +31,7 @@
     <!-- /Top.Mail.Ru counter -->
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>Сантехник На Час | Профессиональные сантехнические услуги</title>
     
     <!-- Preload for hero image (local) -->
@@ -53,12 +53,21 @@
             box-sizing: border-box;
         }
 
+        /* Запрещаем горизонтальный скролл */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
         body {
             font-family: 'Manrope', sans-serif;
             background-color: #FCFAFA;
             color: #1F2A3A;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, .serif, .hello-badge, .quiz-question, .company-info h3, .result-code-box {
@@ -71,6 +80,8 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 28px;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         /* -------------------- ТЕЛЕФОН В ШАПКЕ (всегда висит по центру) -------------------- */
@@ -80,14 +91,16 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
-            background: #FFB347;
-            color: #1F2A3A;
+            background: rgba(0, 120, 200, 0.9); /* Синий с 30% прозрачности на темном фоне */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: white;
             padding: 14px 28px;
             border-radius: 60px;
             font-weight: 700;
             text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            border: 2px solid white;
+            box-shadow: 0 8px 20px rgba(0, 60, 120, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             font-size: 1.2rem;
             display: flex;
             align-items: center;
@@ -96,15 +109,17 @@
             white-space: nowrap;
         }
         .header-phone:hover {
-            background: #FFA01E;
+            background: rgba(0, 140, 230, 0.95);
             transform: translateX(-50%) scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 25px rgba(0, 80, 160, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
         }
         .header-phone i {
             font-size: 1.3rem;
+            color: white;
         }
 
-        /* Добавляем отступ сверху для hero, чтобы приветственный баннер не перекрывался кнопкой */
+        /* Добавляем отступ сверху для hero */
         .hero {
             position: relative;
             min-height: 85vh;
@@ -117,7 +132,9 @@
             background-position: center 30%;
             background-repeat: no-repeat;
             isolation: isolate;
-            margin-top: 80px; /* Сдвигаем hero вниз, чтобы баннер был под кнопкой */
+            margin-top: 80px;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .hero::before {
@@ -765,7 +782,7 @@
                 font-size: 1rem;
             }
             .hero {
-                margin-top: 70px; /* Уменьшаем отступ для мобильных */
+                margin-top: 70px;
             }
             .container {
                 padding: 0 16px;
@@ -795,7 +812,7 @@
     </style>
 </head>
 <body>
-    <!-- Фиксированный телефон в шапке (теперь по центру) -->
+    <!-- Фиксированный телефон в шапке (теперь по центру с синим фоном) -->
     <a href="tel:+79012596840" class="header-phone">
         <i class="fas fa-phone-alt"></i> +7 (901) 259-68-40
     </a>
@@ -832,7 +849,7 @@
                     <div class="quiz-option" data-value="leak"><i class="fas fa-water"></i> Протечка / течёт</div>
                     <div class="quiz-option" data-value="blockage"><i class="fas fa-poop"></i> Засорилось</div>
                     <div class="quiz-option" data-value="mixer"><i class="fas fa-shower"></i> Замена смесителя</div>
-                    <div class="quiz-option" data-value="heater"><i class="fas fa-water heater"></i> Бойлер</div>
+                    <div class="quiz-option" data-value="heater"><i class="fas fa-water-heater"></i> Бойлер</div>
                     <div class="quiz-option" data-value="washer"><i class="fas fa-plug"></i> Подключить технику</div>
                     <div class="quiz-option" data-value="toilet"><i class="fas fa-toilet"></i> Унитаз (арматура)</div>
                 </div>
@@ -877,7 +894,7 @@
             <div class="service-card"><i class="fas fa-shower"></i><div class="title">Замена смесителя</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
             <div class="service-card"><i class="fas fa-poop"></i><div class="title">Устранение засоров</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
             <div class="service-card"><i class="fas fa-tint"></i><div class="title">Устранение протечек</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
-            <div class="service-card"><i class="fas fa-water heater"></i><div class="title">Водонагреватели</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
+            <div class="service-card"><i class="fas fa-water-heater"></i><div class="title">Водонагреватели</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
             <div class="service-card"><i class="fas fa-plug"></i><div class="title">Стиральные машины</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
             <div class="service-card"><i class="fas fa-toilet"></i><div class="title">Унитаз / арматура</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
             <div class="service-card"><i class="fas fa-temperature-high"></i><div class="title">Полотенцесушитель</div><a href="tel:+79012596840" class="call-button"><i class="fas fa-phone-alt"></i> Вызвать срочно</a></div>
